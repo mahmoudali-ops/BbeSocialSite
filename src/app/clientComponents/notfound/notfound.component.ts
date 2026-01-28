@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-notfound',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './notfound.component.html',
   styleUrl: './notfound.component.css'
 })
@@ -21,10 +21,6 @@ export class NotfoundComponent {
 
   initAnimations(): void {
     // يمكن إضافة منطق إضافي للتحريك إذا لزم الأمر
-  }
-
-  goHome(): void {
-    this.router.navigate(['/home']);
   }
 
 
