@@ -24,8 +24,8 @@ export class NotfoundComponent {
   }
 
 
-  // توليد جزيئات عشوائية للحركة
+  // توليد جزيئات  عشوائية للحركة
   generateParticles(count: number): void {
     this.particles = Array(count).fill(0).map((_, i) => i);
   }
-}
+} 
