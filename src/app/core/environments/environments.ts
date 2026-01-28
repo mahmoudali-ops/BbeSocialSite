@@ -1,4 +1,4 @@
 export const environment = {
-  BaseUrl: 'https://localhost:7065',    //https://tourpro.runasp.net
+  BaseUrl: 'https://bbesociall.runasp.net',    //https://bbesociall.runasp.net
     UrlServer:'http://localhost:4200'
  };
