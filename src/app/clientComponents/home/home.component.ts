@@ -72,7 +72,7 @@ export class HomeComponent  extends ReloadableComponent {
   ngOnInit(): void {
    // this.LoadData();
    // this.onReload(() => this.LoadData());
-    this.LoadDataSeo();
+   // this.LoadDataSeo();
 
     this.loadBrandsImages();
     this.loadPrices();
@@ -84,36 +84,36 @@ export class HomeComponent  extends ReloadableComponent {
    
    }
 
-   LoadDataSeo(){
-    this.meta.removeTag("name='description'");
-    this.meta.removeTag("name='keywords'");
+  //  LoadDataSeo(){
+  //   this.meta.removeTag("name='description'");
+  //   this.meta.removeTag("name='keywords'");
   
-    // 🔹 Title (Brand + Location + Service)
-    this.title.setTitle(
-      'BbeSocial | customer support agency for e-commerce brands'
-    );
+  //   // 🔹 Title (Brand + Location + Service)
+  //   this.title.setTitle(
+  //     'BbeSocial | customer support agency for e-commerce brands'
+  //   );
   
-    // 🔹 Meta Description (Conversion + SEO)
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Top Picks Travels is a trusted travel agency in Hurghada offering unforgettable tours, excursions, desert safaris, snorkeling trips, and private transfers across Egypt. Book your perfect holiday experience today.'
-    });
+  //   // 🔹 Meta Description (Conversion + SEO)
+  //   this.meta.updateTag({
+  //     name: 'description',
+  //     content:
+  //       'Top Picks Travels is a trusted travel agency in Hurghada offering unforgettable tours, excursions, desert safaris, snorkeling trips, and private transfers across Egypt. Book your perfect holiday experience today.'
+  //   });
   
-    // 🔹 Keywords (Strong but not spammy)
-    this.meta.updateTag({
-      name: 'keywords',
-      content:
-        'Hurghada tours, Egypt excursions, Red Sea activities, Hurghada travel agency, desert safari Hurghada, snorkeling trips Egypt, Egypt day tours, Top Picks Travels'
-    });
+  //   // 🔹 Keywords (Strong but not spammy)
+  //   this.meta.updateTag({
+  //     name: 'keywords',
+  //     content:
+  //       'Hurghada tours, Egypt excursions, Red Sea activities, Hurghada travel agency, desert safari Hurghada, snorkeling trips Egypt, Egypt day tours, Top Picks Travels'
+  //   });
   
-    // 🔹 Open Graph (Social + SEO Boost)
-    this.meta.updateTag({ property: 'og:title', content: 'Top Picks Travels | Hurghada Tours & Egypt Excursions' });
-    this.meta.updateTag({ property: 'og:description', content: 'Book the best tours, excursions, and Red Sea activities in Hurghada with Top Picks Travels. Trusted local travel experts.' });
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://toppickstravels.com/' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://toppickstravels.com/assets/images/toppicktravel-removebg-preview2.png' });
-   };
+  //   // 🔹 Open Graph (Social + SEO Boost)
+  //   this.meta.updateTag({ property: 'og:title', content: 'Top Picks Travels | Hurghada Tours & Egypt Excursions' });
+  //   this.meta.updateTag({ property: 'og:description', content: 'Book the best tours, excursions, and Red Sea activities in Hurghada with Top Picks Travels. Trusted local travel experts.' });
+  //   this.meta.updateTag({ property: 'og:type', content: 'website' });
+  //   this.meta.updateTag({ property: 'og:url', content: 'https://toppickstravels.com/' });
+  //   this.meta.updateTag({ property: 'og:image', content: 'https://toppickstravels.com/assets/images/toppicktravel-removebg-preview2.png' });
+  //  };
   //  LoadData() {
   //   this.destnationservice.getAllDestnation()
   //     .pipe(takeUntil(this.destroy$))
