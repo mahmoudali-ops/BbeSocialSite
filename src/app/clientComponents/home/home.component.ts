@@ -72,7 +72,7 @@ export class HomeComponent  extends ReloadableComponent {
   ngOnInit(): void {
    // this.LoadData();
    // this.onReload(() => this.LoadData());
-   //  this.LoadDataSeo();
+    this.LoadDataSeo();
 
     this.loadBrandsImages();
     this.loadPrices();
@@ -84,36 +84,49 @@ export class HomeComponent  extends ReloadableComponent {
    
    }
 
-  //  LoadDataSeo(){
-  //   this.meta.removeTag("name='description'");
-  //   this.meta.removeTag("name='keywords'");
+   LoadDataSeo() {
+    this.meta.removeTag("name='description'");
+    this.meta.removeTag("name='keywords'");
   
-  //   // 🔹 Title (Brand + Location + Service)
-  //   this.title.setTitle(
-  //     'BbeSocial | customer support agency for e-commerce brands'
-  //   );
+    // 🔹 Title (Brand + Service)
+    this.title.setTitle(
+      'BBESocial | Customer Service & Support Agency for E-commerce Brands'
+    );
   
-  //   // 🔹 Meta Description (Conversion + SEO)
-  //   this.meta.updateTag({
-  //     name: 'description',
-  //     content:
-  //       'Top Picks Travels is a trusted travel agency in Hurghada offering unforgettable tours, excursions, desert safaris, snorkeling trips, and private transfers across Egypt. Book your perfect holiday experience today.'
-  //   });
+    // 🔹 Meta Description (SEO + Conversion)
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'BBESocial is a professional customer service agency helping e-commerce brands deliver exceptional support experiences. From email and live chat to call support and multilingual service, we act as an extension of your team to boost customer satisfaction and long-term loyalty.'
+    });
   
-  //   // 🔹 Keywords (Strong but not spammy)
-  //   this.meta.updateTag({
-  //     name: 'keywords',
-  //     content:
-  //       'Hurghada tours, Egypt excursions, Red Sea activities, Hurghada travel agency, desert safari Hurghada, snorkeling trips Egypt, Egypt day tours, Top Picks Travels'
-  //   });
+    // 🔹 Keywords (Relevant & Clean)
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'customer service agency, customer support outsourcing, e-commerce customer support, live chat support, email support services, call center solutions, multilingual customer service, BBESocial'
+    });
   
-  //   // 🔹 Open Graph (Social + SEO Boost)
-  //   this.meta.updateTag({ property: 'og:title', content: 'Top Picks Travels | Hurghada Tours & Egypt Excursions' });
-  //   this.meta.updateTag({ property: 'og:description', content: 'Book the best tours, excursions, and Red Sea activities in Hurghada with Top Picks Travels. Trusted local travel experts.' });
-  //   this.meta.updateTag({ property: 'og:type', content: 'website' });
-  //   this.meta.updateTag({ property: 'og:url', content: 'https://toppickstravels.com/' });
-  //   this.meta.updateTag({ property: 'og:image', content: 'https://toppickstravels.com/assets/images/toppicktravel-removebg-preview2.png' });
-  //  };
+    // 🔹 Open Graph (Social Sharing + Branding)
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'BBESocial | Customer Service Agency for E-commerce Brands'
+    });
+  
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Extend your in-house team with professional customer service solutions. BBESocial provides reliable, human-centered support that strengthens your brand and delights your customers.'
+    });
+  
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://bbesocial.com/' });
+    this.meta.updateTag({
+      property: 'og:image',
+      content: 'https://bbesocial.com/assets/images/bbesocial-logo.png'
+    });
+  };
+  
   //  LoadData() {
   //   this.destnationservice.getAllDestnation()
   //     .pipe(takeUntil(this.destroy$))
