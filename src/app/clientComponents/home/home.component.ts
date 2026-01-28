@@ -72,7 +72,7 @@ export class HomeComponent  extends ReloadableComponent {
   ngOnInit(): void {
    // this.LoadData();
    // this.onReload(() => this.LoadData());
-   // this.LoadDataSeo();
+   //  this.LoadDataSeo();
 
     this.loadBrandsImages();
     this.loadPrices();
