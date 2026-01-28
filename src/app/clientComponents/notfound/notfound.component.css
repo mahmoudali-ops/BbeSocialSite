@@ -1,0 +1,322 @@
+/* =============================
+   General Styles
+============================= */
+.not-found-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* =============================
+     Starry Background
+  ============================= */
+  .stars, .stars2, .stars3 {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .stars::after, .stars2::after, .stars3::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 
+      50px 100px #fff, 200px 300px #fff, 400px 150px #fff,
+      600px 400px #fff, 800px 200px #fff, 1000px 500px #fff;
+  }
+  
+  .stars2::after { transform: scale(0.6); }
+  .stars3::after { transform: scale(0.3); }
+  
+  .stars { animation: starMove 100s linear infinite; }
+  .stars2 { animation: starMove 120s linear infinite; }
+  .stars3 { animation: starMove 140s linear infinite; }
+  
+  @keyframes starMove {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-1000px) translateX(-500px); }
+  }
+  
+  /* =============================
+     Astronaut Animation
+  ============================= */
+  .astronaut-container {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: astronautFloat 4s ease-in-out infinite alternate;
+  }
+  
+  @keyframes astronautFloat {
+    0% { transform: translate(-50%, 0) rotate(-10deg); }
+    50% { transform: translate(-50%, -40px) rotate(10deg); }
+    100% { transform: translate(-50%, 0) rotate(-10deg); }
+  }
+  
+  .astronaut {
+    position: relative;
+    width: 100px;
+    height: 200px;
+  }
+  
+  .helmet {
+    width: 50px;
+    height: 50px;
+    background: #bbb;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .visor {
+    width: 40px;
+    height: 20px;
+    background: #1a1a2e;
+    border-radius: 20px / 10px;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+  }
+  
+  .visor-reflection, .visor-reflection2 {
+    width: 10px;
+    height: 3px;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 3px;
+    border-radius: 50%;
+  }
+  
+  .visor-reflection2 { top: 10px; left: 20px; }
+  
+  .suit {
+    width: 30px;
+    height: 80px;
+    background: #666;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    top: -5px;
+  }
+  
+  /* Arms Animation */
+  .arm {
+    width: 12px;
+    height: 40px;
+    background: #666;
+    position: absolute;
+    top: 20px;
+    border-radius: 10px;
+    transform-origin: top center;
+    animation: armWave 1.5s ease-in-out infinite alternate;
+  }
+  
+  .left-arm { left: -18px; }
+  .right-arm { right: -18px; }
+  
+  @keyframes armWave {
+    0% { transform: rotate(-20deg); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(-20deg); }
+  }
+  
+  /* Legs */
+  .leg {
+    width: 12px;
+    height: 40px;
+    background: #666;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+  }
+  
+  .left-leg { left: 5px; }
+  .right-leg { right: 5px; }
+  
+  /* Oxygen Tank */
+  .oxygen-tank {
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background: #444;
+    top: 60px;
+    left: 40px;
+    border-radius: 5px;
+  }
+  
+  /* =============================
+     Error Content
+  ============================= */
+  .error-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    padding: 0 15px;
+  }
+  
+  .error-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    margin-bottom: 10px;
+    color: #ff4c4c;
+  }
+  
+  .planet {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #888;
+    border-radius: 50%;
+    margin: 0 10px;
+  }
+  
+  .planet-ring {
+    position: absolute;
+    width: 75px;
+    height: 4px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    top: 22px;
+    left: -12px;
+    transform: rotate(-20deg);
+  }
+  
+  .crater { 
+    position: absolute; 
+    width: 6px; 
+    height: 6px; 
+    background: #666; 
+    border-radius: 50%; 
+  }
+  
+  .crater:nth-child(2) { top: 8px; left: 8px; }
+  .crater:nth-child(3) { top: 25px; left: 20px; }
+  .crater:nth-child(4) { top: 15px; left: 32px; }
+  
+  .error-title {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+  
+  .error-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+  
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  .button-group .btn-back {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: #ff4c4c;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .btn-back:hover { background: #ff1f1f; transform: scale(1.05); }
+  
+  /* =============================
+     Space Station
+  ============================= */
+  .space-station {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 100px;
+    animation: rotateStation 15s linear infinite;
+  }
+  
+  @keyframes rotateStation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .station-body {
+    width: 100px;
+    height: 50px;
+    background: #555;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .satellite-dish {
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 40px;
+  }
+  
+  .station-window {
+    width: 12px;
+    height: 12px;
+    background: #aaa;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .station-window:nth-child(2) { top: 5px; left: 10px; }
+  .station-window:nth-child(3) { top: 5px; left: 40px; }
+  .station-window:nth-child(4) { top: 5px; left: 70px; }
+  
+  /* =============================
+     Floating Debris
+  ============================= */
+  .debris-piece {
+    width: 8px;
+    height: 8px;
+    background: #999;
+    border-radius: 50%;
+    position: absolute;
+    animation: floatDebris 6s linear infinite;
+  }
+  
+  @keyframes floatDebris {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(-250px, -500px) rotate(360deg); opacity: 0; }
+  }
+  
+  /* =============================
+     Responsive for Mobile
+  ============================= */
+  @media (max-width: 768px) {
+    .error-number { font-size: 60px; }
+    .error-title { font-size: 22px; }
+    .error-description { font-size: 14px; }
+    .button-group .btn-back { padding: 8px 20px; font-size: 14px; }
+    .astronaut-container { width: 80px; top: 10%; }
+    .astronaut { width: 80px; height: 160px; }
+    .helmet { width: 40px; height: 40px; }
+    .suit { width: 25px; height: 70px; }
+    .arm { width: 10px; height: 35px; }
+    .leg { width: 10px; height: 35px; }
+    .oxygen-tank { width: 12px; height: 40px; top: 50px; left: 35px; }
+    .space-station { width: 80px; top: 5%; right: 3%; }
+  }
+  

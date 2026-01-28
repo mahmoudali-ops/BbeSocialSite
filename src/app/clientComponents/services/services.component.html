@@ -1,0 +1,112 @@
+<section class="services-intro-section">
+  <div class="container">
+    <h2 class="services-intro-title">{{ 'SERV_INTRO.HEADLINE' | t }}</h2>
+    <p class="services-intro-description">{{ 'SERV_INTRO.DESCRIPTION' | t }}</p>
+
+    <!-- Features Icons -->
+    <div class="services-features-icons">
+      <div class="feature-icon">
+        <i class="bi bi-lightning-charge-fill"></i>
+        <p>{{ 'SERV_INTRO.FEATURE_XP1' | t }}</p>
+      </div>
+      <div class="feature-icon">
+        <i class="bi bi-people-fill"></i>
+        <p>{{ 'SERV_INTRO.FEATURE_XP2' | t }}</p>
+      </div>
+      <div class="feature-icon">
+        <i class="bi bi-award-fill"></i>
+        <p>{{ 'SERV_INTRO.FEATURE_XP3' | t }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <section class="brands-section">
+    <div class="brands-wrapper">
+  
+      <!-- Text Box -->
+      <div class="brands-text-box">
+        <h3><i class="fa-solid fa-chess"></i>{{ 'TRUST_SECTION.TRUSTED_TITLE' | t }}</h3>
+      </div>
+  
+      <!-- Swiper -->
+      <swiper-container
+        class="brands-swiper"
+        loop="true"
+        autoplay-delay="2500"
+        autoplay-disable-on-interaction="false"
+        speed="600"
+        space-between="20"
+        breakpoints='{
+          "0": { "slidesPerView": 2 },
+          "640": { "slidesPerView": 3 },
+          "1024": { "slidesPerView": 4 }
+        }'
+      >
+        <swiper-slide
+          *ngFor="let brand of BarndsImagesData()"
+          class="brand-slide"
+        >
+          <div class="brand-card">
+            <img
+              [src]="brand.imageUrl"
+              [alt]="'Brand ' + brand.id"
+              loading="lazy"
+            />
+          </div>
+        </swiper-slide>
+      </swiper-container>
+  
+    </div>
+  </section>
+  
+  
+  
+   
+
+  <section class="service-feature-section">
+    <div class="service-feature-list">
+      <div class="service-feature-card" *ngFor="let feature of ServiceFData(); let i = index"
+           [class.reverse]="i % 2 !== 0">
+        <!-- الصورة -->
+        <div class="feature-image animate">
+          <img [src]="feature.imageCover" [alt]="feature.servicesFeatureTranslationDtos[0]?.title">
+        </div>
+  
+        <!-- الكلام -->
+        <div class="feature-body">
+          <h3 class="feature-title">{{feature.servicesFeatureTranslationDtos[0]?.title}}</h3>
+          <p class="feature-description">{{feature.servicesFeatureTranslationDtos[0]?.description}}</p>
+          <ul class="feature-includes">
+            <li>{{feature.servicesFeatureTranslationDtos[0]?.includeFirst}}</li>
+            <li>{{feature.servicesFeatureTranslationDtos[0]?.includeSecond}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+   <section class="service-core-section">
+    <div class="container">
+      <h2 class="service-core-title">{{ 'TRUST_SECTION.CORE_SERVICES_TITLE' | t }}</h2>
+      <div class="service-core-list">
+        <div class="service-core-card" *ngFor="let service of ServiceCData()">
+          
+          <!-- صورة الخدمة -->
+          <div class="core-image">
+            <img [src]="service.imageCover" [alt]="service.serviceCoreTranlationDtos[0]?.title">
+          </div>
+          
+          <!-- النصوص -->
+          <div class="core-body">
+            <h3 class="core-title">{{service.serviceCoreTranlationDtos[0]?.title}}</h3>
+            <p class="core-description">{{service.serviceCoreTranlationDtos[0]?.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  

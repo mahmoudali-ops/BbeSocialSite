@@ -1,0 +1,132 @@
+<nav class="main-nav" 
+[class.scrolled]="isScrolled" 
+[class.light]="!isScrolled"
+[class.hide-on-mobile]="isOffcanvasOpen">
+    <div class="container nav-container">
+      <!-- الشعار -->
+      <a class="logo" routerLink="/">
+        <img src="assets/images/bbesocaiallogo.png" alt="Logo" />
+      </a>
+  
+      <!-- القائمة في الوسط -->
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/" routerLinkActive="active-link">
+            {{ 'NAV.HOME' | t }}
+          </a>
+        </li>
+    
+        
+        <li>
+          <a routerLink="/about" routerLinkActive="active-link">
+            {{ 'NAV.ABOUT' | t }}
+          </a>
+        </li>
+        
+        <li>
+          <a routerLink="/services" routerLinkActive="active-link">
+            {{ 'NAV.SERVICE' | t }}
+          </a>
+        </li>
+        
+        <li>
+          <a routerLink="/pricing" routerLinkActive="active-link">
+            {{ 'NAV.PRICING' | t }}
+          </a>
+        </li>
+        
+        <li>
+          <a routerLink="/career" routerLinkActive="active-link">
+            {{ 'NAV.CAREER' | t }}
+          </a>
+        </li>
+        
+        <li>
+          <a routerLink="/faq" routerLinkActive="active-link">
+            {{ 'NAV.FAQS' | t }}
+          </a>
+        </li>
+        
+        <li>
+          <a routerLink="/contact" routerLinkActive="active-link">
+            {{ 'NAV.CONTACT' | t }}
+          </a>
+        </li>
+        
+      </ul>
+      <div class="language-switcher">
+        <button class="lang-btn">
+          <img src="../../../assets/images/egypt.png" alt="French"(click)="changeLang('ar')">
+         </button>
+        <button class="lang-btn">
+          <img src="../../../assets/images/holand.png" alt="Holand"(click)="changeLang('hl')">
+        </button>
+        <button class="lang-btn">
+          <img src="assets/images/german.jpg" alt="Arabic"(click)="changeLang('de')">
+        </button>
+        <button class="lang-btn">
+          <img src="assets/images/brith.png" alt="English"(click)="changeLang('en')">
+        </button>
+      </div>
+      
+      <!-- Social Icons على اليمين s-->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr" class="social-icon" data-name="facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+   
+        <a href="https://www.tiktok.com/@toppickstravles?_r=1&_t=ZS-92fOacK1l3Q"><i class="fab fa-tiktok"></i></a>
+
+        <a href="https://www.instagram.com/bbe.social?igsh=OTF2dmN5c3NneXNr" class="social-icon" data-name="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <button class="hamburger-btn" (click)="toggleOffcanvas()" [class.active]="isOffcanvasOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    
+    </div>
+  </nav>
+
+
+  <!-- Hamburger Button for Mobile -->
+
+<!-- Offcanvas Menu -->
+<!-- Overlay -->
+<div
+  class="offcanvas-overlay"
+  (click)="closeOffcanvas()"
+  [class.active]="isOffcanvasOpen">
+</div> 
+
+<div class="offcanvas-menu" [class.active]="isOffcanvasOpen">
+  <div class="offcanvas-header">
+    <a class="logo" routerLink="/" (click)="closeOffcanvas()">
+      <img src="../../../assets/images/bbesocaiallogo.png" alt="Logo" />
+    </a>
+    <button class="close-btn" (click)="closeOffcanvas()">&times;</button>
+  </div>
+
+  <ul class="offcanvas-links">
+    <li><a routerLink="/" routerLinkActive="active-link" (click)="closeOffcanvas()"> {{ 'NAV.HOME' | t }}</a></li>
+    <li><a routerLink="/about" (click)="closeOffcanvas()">{{ 'NAV.ABOUT' | t }}</a></li>
+    <li><a routerLink="/services" (click)="closeOffcanvas()"> {{ 'NAV.SERVICE' | t }}</a></li>
+    <li><a routerLink="/pricing" (click)="closeOffcanvas()">{{ 'NAV.PRICING' | t }}</a></li>
+    <li><a routerLink="/career" (click)="closeOffcanvas()"> {{ 'NAV.CAREER' | t }}</a></li>
+    <li><a routerLink="/faq" (click)="closeOffcanvas()"> {{ 'NAV.FAQS' | t }}</a></li>
+    <li><a routerLink="/contact" (click)="closeOffcanvas()">{{ 'NAV.CONTACT' | t }}</a></li>
+  </ul>
+
+  <!-- Social Icons in Offcanvas -->
+  <div class="offcanvas-social">
+    <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.tiktok.com/@toppickstravles?_r=1&_t=ZS-92fOacK1l3Q"><i class="fab fa-tiktok"></i></a>
+
+    <a href="https://www.instagram.com/bbe.social?igsh=OTF2dmN5c3NneXNr" class="social-icon" data-name="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</div>
+

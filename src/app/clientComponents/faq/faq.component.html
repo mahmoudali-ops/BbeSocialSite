@@ -1,0 +1,34 @@
+<section class="faq-page">
+
+  <!-- Header + Description -->
+  <div class="faq-header">
+    <h2 class="gradient-title">
+      {{ 'FAQ.TITLE' | t }}
+    </h2>
+  
+    <p class="faq-description">
+      {{ 'FAQ.DESCRIPTION' | t }}
+    </p>
+  </div>
+  
+
+  <!-- Image -->
+  <div class="faq-image">
+    <img [src]="faqData()?.imageCover" alt="FAQ Image" />
+  </div>
+
+  <!-- FAQ List -->
+  <div class="faq-list">
+    <div class="faq-item" *ngFor="let faq of faqData()?.fAQsTranslationDTos; let i = index"
+         [class.active]="activeIndex === i">
+      <button class="faq-question" (click)="toggleFaq(i)">
+        {{ faq.question }}
+        <span class="arrow">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,100 @@
+<div class="not-found-page">
+    <!-- Starry Background -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  
+    <!-- Animated Astronaut -->
+    <div class="astronaut-container">
+      <div class="astronaut">
+        <!-- Body -->
+        <div class="astronaut-body">
+          <!-- Helmet -->
+          <div class="helmet">
+            <div class="visor">
+              <div class="visor-reflection"></div>
+              <div class="visor-reflection2"></div>
+            </div>
+            <div class="helmet-detail"></div>
+          </div>
+          
+          <!-- Suit -->
+          <div class="suit">
+            <!-- Arms -->
+            <div class="arm left-arm">
+              <div class="hand"></div>
+            </div>
+            <div class="arm right-arm">
+              <div class="hand"></div>
+            </div>
+            
+            <!-- Legs -->
+            <div class="leg left-leg"></div>
+            <div class="leg right-leg"></div>
+          </div>
+        </div>
+        
+        <!-- Oxygen Tank -->
+        <div class="oxygen-tank">
+          <div class="tank-body"></div>
+          <div class="tank-strap"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="particles">
+          <div class="particle" *ngFor="let particle of particles"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Content -->
+    <div class="error-content">
+      <!-- Error Number -->
+      <div class="error-number">
+        <span class="digit">4</span>
+        <div class="planet">
+          <div class="planet-ring"></div>
+          <div class="crater"></div>
+          <div class="crater"></div>
+          <div class="crater"></div>
+        </div>
+        <span class="digit">4</span>
+      </div>
+  
+      <!-- Title -->
+      <h1 class="error-title">PAGE NOT FOUND</h1>
+      
+      <!-- Description -->
+      <p class="error-description">
+        Your search has ventured beyond the known universe.
+      </p>
+      
+      <!-- Button Group -->
+      <div class="button-group">
+        <button class="btn-back" (click)="goHome()">
+          <i class="fas fa-home"></i>
+          Back To Home
+        </button>
+        
+      </div>
+  
+      
+      <!-- Space Station Animation -->
+      <div class="space-station">
+        <div class="station-body">
+          <div class="satellite-dish"></div>
+          <div class="station-window"></div>
+          <div class="station-window"></div>
+          <div class="station-window"></div>
+        </div>
+        <div class="station-panel">
+          <div class="panel-light" *ngFor="let light of [1,2,3,4,5,6]"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Floating Debris -->
+    <div class="debris" *ngFor="let debris of debrisItems">
+      <div class="debris-piece"></div>
+    </div>
+  </div>

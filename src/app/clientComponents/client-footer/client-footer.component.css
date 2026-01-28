@@ -1,0 +1,183 @@
+.bbe-footer {
+  position: relative;
+  padding: 20px 10px 15px;
+  background: linear-gradient(270deg, #fd7b7d, #5c2325, #ff7a7e);
+  background-size: 600% 600%;
+  animation: gradientMove 12s ease infinite;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow */
+.footer-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(240, 122, 44, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Logo */
+.logo-spin {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(239, 225, 225, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 8s linear infinite;
+}
+
+.logo-spin img {
+  width: 100px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+/* Brand text */
+.brand-name {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.brand-name span {
+  color: #ffeb3b;
+}
+
+.brand-name small {
+  display: block;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Quick Links */
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 22px;
+  margin: 25px 0 15px;
+}
+
+.quick-links a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.quick-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ffeb3b;
+  transition: 0.3s;
+}
+
+.quick-links a:hover {
+  opacity: 1;
+}
+
+.quick-links a:hover::after {
+  width: 100%;
+}
+
+/* Social */
+.social-box {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.social:hover {
+  transform: translateY(-6px) scale(1.1) rotate(10deg);
+  background: #fff;
+  color: #2575fc;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Copyright */
+.copyright {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bbe-footer {
+    padding: 20px 10px 10px;
+  }
+
+  .logo-spin {
+    width: 110px;
+    height: 110px;
+  }
+
+  .logo-spin img {
+    width: 90px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .quick-links a {
+    font-size: 13px;
+  }
+
+  .social {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+}
+
+.next{
+  margin-top: 50px;
+  color: rgb(21, 0, 255);
+  font-size: large;
+}
+

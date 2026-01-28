@@ -1,0 +1,113 @@
+<div class="career-header">
+    <h2 class="career-title">
+      <span>C</span> <span> a </span> <span> r </span> <span> e </span> <span> e </span> <span> r </span>
+    </h2>
+    <p class="career-subtitle">
+      {{ 'CAREER.SUBTITLE' | t }}
+    </p>
+    
+  </div>
+  
+  
+
+<div class="career-list">
+
+    @for (career of careerData(); track career.id) {
+  
+      @for (job of career.careerCardTranslationsDto; track job.id) {
+  
+        <div class="career-card">
+  
+          <!-- Image -->
+          <div class="career-image">
+            <img
+              [src]="career.imageCover"
+              [alt]="job.jobTitle"
+            />
+          </div>
+  
+          <!-- Content -->
+          <div class="career-card-body">
+            <div class="career-card-header">
+              <h3>{{ job.jobTitle }}</h3>
+              <span class="badge">{{ job.employmentType }}</span>
+            </div>
+  
+            <p class="salary">
+              ${{ job.salaryFrom }} - ${{ job.salaryTo }}
+              <span>/ {{ job.salaryPeriod }}</span>
+            </p>
+  
+            <p class="career-text">
+              {{ job.description }}
+            </p>
+  
+            <div class="career-footer">
+              <span class="date">
+                {{ 'CAREER.UPDATED' | t }}
+                {{ job.updatedAt | date:'mediumDate' }}
+              </span>
+              
+              <button class="btn-primary">
+                {{ 'COMMON.CONTACT_US' | t }}
+              </button>
+              
+            </div>
+          </div>
+  
+        </div>
+  
+      }
+  
+    }
+  
+  </div>
+
+  <section class="apply-section">
+    <div class="apply-container">
+  
+      <!-- Left Content -->
+      <div class="apply-content">
+        <h2 class="gradient-title">
+          {{ 'APPLY.TITLE' | t }}
+        </h2>
+      
+        <p class="apply-subtitle">
+          {{ 'APPLY.SUBTITLE' | t }}
+        </p>
+      
+        <div class="apply-step">
+          <span class="step-number">01</span>
+          <div>
+            <h4>{{ 'APPLY.STEP1.TITLE' | t }}</h4>
+            <p>{{ 'APPLY.STEP1.DESCRIPTION' | t }}</p>
+          </div>
+        </div>
+      
+        <div class="apply-step">
+          <span class="step-number">02</span>
+          <div>
+            <h4>{{ 'APPLY.STEP2.TITLE' | t }}</h4>
+            <p>{{ 'APPLY.STEP2.DESCRIPTION' | t }}</p>
+          </div>
+        </div>
+      
+        <div class="apply-step">
+          <span class="step-number">03</span>
+          <div>
+            <h4>{{ 'APPLY.STEP3.TITLE' | t }}</h4>
+            <p>{{ 'APPLY.STEP3.DESCRIPTION' | t }}</p>
+          </div>
+        </div>
+      </div>
+      
+  
+      <!-- Right Image -->
+      <div class="apply-image">
+        <img src="../../../assets/images/careeeer.jpg" alt="Career Image">
+      </div>
+  
+    </div>
+  </section>
+  
+  

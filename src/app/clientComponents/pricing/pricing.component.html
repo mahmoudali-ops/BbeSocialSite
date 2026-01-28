@@ -1,0 +1,237 @@
+
+<div class="prices-header">
+    <!-- Particles Background -->
+    <div class="particles-container">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+      <div class="particle particle-6"></div>
+      <div class="particle particle-7"></div>
+      <div class="particle particle-8"></div>
+    </div>
+    
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <i class="bi-currency-dollar floating-icon icon-1"></i>
+      <i class="bi-graph-up-arrow floating-icon icon-2"></i>
+      <i class="bi-shield-check floating-icon icon-3"></i>
+      <i class="bi-headset floating-icon icon-4"></i>
+    </div>
+    
+    <!-- Main Content Container -->
+    <div class="header-content-container">
+      <div class="header-text-wrapper">
+        <h1 class="header-title">
+          <span class="highlight-text">{{ 'PRICING.TITLE_HIGHLIGHT' | t }}</span>
+        </h1>
+        
+        <div class="typewriter-wrapper">
+          <p class="animated-subtitle">
+            <span class="text-part part-1">{{ 'PRICING.SUBTITLE_PART1' | t }}</span>
+            <span class="text-part part-2">{{ 'PRICING.SUBTITLE_PART2' | t }}</span>
+            <span class="text-part part-3">{{ 'PRICING.SUBTITLE_PART3' | t }}</span>
+          </p>
+          <div class="typing-cursor"></div>
+        </div>
+      </div>
+      
+      
+      <!-- Animated Stats with Icons -->
+      <div class="animated-stats-wrapper">
+        <div class="stats-grid">
+          <div class="stat-card stat-card-1">
+            <div class="stat-icon">
+              <i class="bi-emoji-smile"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" data-count="120">120</div>
+              <div class="stat-label">{{ 'STATS.CLIENT_SATISFACTION' | t }}</div>
+            </div>
+          </div>
+          
+          <div class="stat-card stat-card-2">
+            <div class="stat-icon">
+              <i class="bi-clock"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" data-count="24">24</div>
+              <span>{{ 'HIGHLIGHTS.SUPPORT_247' | t }}</span>
+            </div>
+          </div>
+          
+          <div class="stat-card stat-card-3">
+            <div class="stat-icon">
+              <i class="bi-building"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" data-count="60">60</div>
+              <div class="stat-label">{{ 'STATS.BUSINESSES' | t }}</div>
+            </div>
+          </div>
+          
+          <div class="stat-card stat-card-4">
+            <div class="stat-icon">
+              <i class="bi-award"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" data-count="10">10</div>
+              <div class="stat-label">{{ 'STATS.YEARS_EXPERIENCE' | t }}</div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator (click)="scrollToPlans()-->
+    <div class="scroll-indicator">
+      <span class="scroll-text">{{ 'COMMON.VIEW_PRICING' | t }}</span>
+      <div class="scroll-arrow">
+        <i class="bi-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+  
+  <section class="prices-page" id="pricingPlans">
+    <!-- Header -->
+    
+  
+    <!-- Cards Grid -->
+    <div class="prices-grid">
+  
+      <div class="price-card" *ngFor="let price of AllPrices()">
+  
+        <!-- Image -->
+        <div class="card-image">
+          <img [src]="price.imageCover" alt="price image">
+  
+          <!-- Discount -->
+          <span class="discount-badge">
+            <i class="bi-tag-fill"></i> {{ price.priceTranlationDtos[0]?.discount }} OFF
+          </span>
+        </div>
+  
+        <!-- Body -->
+        <div class="card-body">
+  
+          <h3 class="title">
+            {{ price.priceTranlationDtos[0]?.title }}
+          </h3>
+  
+          <p class="description">
+            {{ price.priceTranlationDtos[0]?.description }}
+          </p>
+  
+          <!-- Static Highlights -->
+          <div class="highlights">
+            <span><i class="bi-check-circle"></i> {{ 'HIGHLIGHTS.NO_SETUP' | t }}</span>
+            <span><i class="bi-check-circle"></i> {{ 'HIGHLIGHTS.SUPPORT_247' | t }}</span>
+            <span><i class="bi-check-circle"></i> {{ 'HIGHLIGHTS.CANCEL_ANYTIME' | t }}</span>
+          </div>
+          
+  
+          <!-- Price -->
+          <div class="price">
+            <span class="currency">€</span>
+            <span class="amount">
+              {{ price.priceTranlationDtos[0]?.priceService }}
+            </span>
+            <span class="period">{{ 'HIGHLIGHTS.PER_MONTH' | t }}</span>
+          </div>
+  
+          <!-- Features -->
+          <ul class="features">
+            <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeFirst }}</li>
+            <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeSecond }}</li>
+            <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeThird }}</li>
+            <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeForth }}</li>
+          </ul>
+  
+          <!-- Footer Note -->
+          <p class="note">{{ 'HIGHLIGHTS.NOTE' | t }}</p>
+  
+  
+          <!-- Button -->
+          <div class="container-button">
+            <div class="hover bt-1"></div>
+            <div class="hover bt-2"></div>
+            <div class="hover bt-3"></div>
+            <div class="hover bt-4"></div>
+            <div class="hover bt-5"></div>
+            <div class="hover bt-6"></div>
+            <button class="fancy-btn"></button>
+          </div>
+          
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <section class="why-choose-section">
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+  
+    <div class="why-choose-container">
+  
+      <!-- Image Side -->
+      <div class="why-image">
+        <img src="assets/images/lenda-removebg-preview.png" alt="Why Choose Us">
+      </div>
+  
+      <!-- Content Side -->
+      <div class="why-content">
+
+        <span class="section-tag">{{ 'WHY_CHOOSE_US.TAGLINE' | t }}</span>
+      
+        <h2 class="main-title">
+          {{ 'WHY_CHOOSE_US.HEADLINE_PREFIX' | t }}
+          <span>{{ 'WHY_CHOOSE_US.HEADLINE_HIGHLIGHT' | t }}</span>
+        </h2>
+      
+        <p class="subtitle">{{ 'WHY_CHOOSE_US.DESCRIPTION' | t }}</p>
+      
+        <!-- Features -->
+        <div class="features-list">
+      
+          <div class="feature-item">
+            <div class="feature-number">01</div>
+            <div class="feature-text">
+              <h4>{{ 'WHY_CHOOSE_US.FEATURE_ALPHA.TITLE' | t }}</h4>
+              <p>{{ 'WHY_CHOOSE_US.FEATURE_ALPHA.DESC' | t }}</p>
+            </div>
+          </div>
+      
+          <div class="feature-item">
+            <div class="feature-number">02</div>
+            <div class="feature-text">
+              <h4>{{ 'WHY_CHOOSE_US.FEATURE_BETA.TITLE' | t }}</h4>
+              <p>{{ 'WHY_CHOOSE_US.FEATURE_BETA.DESC' | t }}</p>
+            </div>
+          </div>
+      
+          <div class="feature-item">
+            <div class="feature-number">03</div>
+            <div class="feature-text">
+              <h4>{{ 'WHY_CHOOSE_US.FEATURE_GAMMA.TITLE' | t }}</h4>
+              <p>{{ 'WHY_CHOOSE_US.FEATURE_GAMMA.DESC' | t }}</p>
+            </div>
+          </div>
+      
+        </div>
+      
+        <!-- CTA -->
+        <button class="cta-btn">
+          {{ 'WHY_CHOOSE_US.BUTTON_TEXT' | t }} <i class="bi-arrow-right"></i>
+        </button>
+      
+      </div>
+      
+    </div>
+  </section>
+  

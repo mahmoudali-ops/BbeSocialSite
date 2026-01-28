@@ -1,0 +1,391 @@
+<main class="main">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="hero-content">
+        
+            <h1 data-aos="fade-up" data-aos-delay="200">
+              {{ 'HERO.TITLE_PART1' | t }}
+              <span class="highlight">
+                {{ 'HERO.TITLE_HIGHLIGHT' | t }}
+              </span>
+            </h1>
+        
+            <h2 data-aos="fade-up" data-aos-delay="300">
+              {{ 'HERO.SUBTITLE' | t }}
+              <span
+                class="typed"
+                data-typed-items="UI/UX Designer, Web Developer, Digital Artist, Brand Strategist">
+              </span>
+            </h2>
+        
+            <p data-aos="fade-up" data-aos-delay="400">
+              {{ 'HERO.DESCRIPTION' | t }}
+            </p>
+        
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+              <a href="portfolio.html" class="btn btn-primary">
+                {{ 'HERO.CTA_PRIMARY' | t }}
+              </a>
+              <a href="contact.html" class="btn btn-outline">
+                {{ 'COMMON.GET_IN_TOUCH' | t }}
+              </a>
+            </div>
+        
+          </div>
+        </div>
+        
+        <div class="col-lg-6 order-1 order-lg-2">
+          <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+            <div class="image-wrapper">
+              <img src="../../../assets/images/Bibi.png" alt="Sarah Mitchell" class="img-fluid">
+              <div class="floating-elements">
+                <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
+                  <i class="bi bi-palette"></i>
+                  <span>{{ 'HIGHLIGHTS.SUPPORT_247' | t }}</span>
+                </div>
+                <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
+                  <i class="bi bi-code-slash"></i>
+                  <span>{{ 'HIGHLIGHTS.CUSTOMER_CARE' | t }}</span>
+                </div>
+                <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
+                  <i class="bi bi-lightbulb"></i>
+                  <span>{{ 'HIGHLIGHTS.CLIENT_SATISFACTION' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /Hero Section -->
+
+</main>
+
+<section class="experience-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left -->
+      <div class="col-lg-6 experience-content">
+        <h2 class="gradient-title">
+          <span class="highlight">{{ 'EXPERIENCE.YEARS_HIGHLIGHT' | t }}</span>
+          {{ 'EXPERIENCE.DESCRIPTION' | t }}
+          
+        </h2>
+        
+
+        <!-- Skills -->
+        <div class="skill" *ngFor="let skill of skills">
+          <div class="skill-title">
+            <span>{{ skill.title }}</span>
+            <span class="percent">{{ skill.percent }}%</span>
+          </div>
+          <div class="skill-bar">
+            <span
+              [style.width.%]="skill.percent"
+              [style.background]="primaryColor">
+            </span>
+          </div>
+        </div>
+
+        <!-- Why -->
+        <div class="why-box">
+          <h3>{{ 'WHY_US.TITLE' | t }}</h3>
+
+          <p>{{ 'WHY_US.DESCRIPTION' | t }}</p>
+          
+          <a href="#" class="main-btn">{{ 'WHY_US.CTA' | t }}</a>
+          
+        </div>
+        
+      </div>
+
+      <!-- Right -->
+      <div class="col-lg-6 experience-image">
+        <img src="../../../assets/images/team.webp" alt="BBE Social Team" />
+      </div>
+
+    </div>
+
+    <!-- Services -->
+    <div class="services-section">
+      <h3>Our Services</h3>
+    
+      <div class="services-row">
+    
+        <div class="service-item">
+          <i class="fas fa-envelope"></i>
+          <span>{{ 'CS_FEATURES.EMAIL_HANDLING' | t }}</span>
+        </div>
+    
+        <div class="service-item">
+          <i class="fas fa-credit-card"></i>
+          <span>{{ 'CS_FEATURES.KLARNA_ISSUES' | t }}</span>
+        </div>
+    
+        <div class="service-item">
+          <i class="fab fa-paypal"></i>
+          <span>{{ 'CS_FEATURES.PAYPAL_ISSUES' | t }}</span>
+        </div>
+    
+        <div class="service-item">
+          <i class="fas fa-comments"></i>
+          <span>{{ 'CS_FEATURES.LIVE_CHAT' | t }}</span>
+        </div>
+    
+      </div>
+    </div>
+    
+    
+    
+  </div>
+</section>
+
+
+
+<section class="bbe-multi-lang">
+  <div class="bbe-multi-container">
+
+    <!-- Image -->
+    <div class="bbe-multi-image">
+      <img src="../../../assets/images/gehad.webp" alt="Support Team">
+    </div>
+
+    <!-- Content -->
+    <div class="bbe-multi-content">
+
+      <h4 class="bbe-multi-subtitle">
+        {{ 'MULTILINGUAL.SUBTITLE' | t }}
+      </h4>
+      
+      <h2 class="bbe-multi-title">
+        {{ 'MULTILINGUAL.TITLE' | t }}
+      </h2>
+      
+      <p class="bbe-multi-text">
+        {{ 'MULTILINGUAL.DESCRIPTION' | t }}
+      </p>
+      
+
+      <ul class="bbe-multi-languages">
+        <li>
+          <img src="../../../assets/images/usa.png" alt="English">
+          <span>English</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/german.jpg" alt="Germany">
+          <span>Germany</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/french2.jpg" alt="French">
+          <span>French</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/Swedish.png" alt="Swedish">
+          <span>Swedish</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/Norwegian.png" alt="Norwegian">
+          <span>Norwegian</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/Danish.png" alt="Danish">
+          <span>Danish</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/Spanish.png" alt="Spanish">
+          <span>Spanish</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/Italian.png" alt="Italian">
+          <span>Italian</span>
+        </li>
+        <li>
+          <img src="../../../assets/images/Dutch.png" alt="Dutch">
+          <span>Dutch</span>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="brands-section">
+  <div class="brands-wrapper">
+
+    <!-- Text Box -->
+    <div class="brands-text-box">
+      <h3>
+        <i class="fa-solid fa-chess"></i>
+        {{ 'TRUSTED.TITLE' | t }}
+      </h3>
+          </div>
+
+    <!-- Swiper -->
+    <swiper-container
+      class="brands-swiper"
+      loop="true"
+      autoplay-delay="2500"
+      autoplay-disable-on-interaction="false"
+      speed="600"
+      space-between="20"
+      breakpoints='{
+        "0": { "slidesPerView": 2 },
+        "640": { "slidesPerView": 3 },
+        "1024": { "slidesPerView": 4 }
+      }'
+    >
+      <swiper-slide
+        *ngFor="let brand of BarndsImagesData()"
+        class="brand-slide"
+      >
+        <div class="brand-card">
+          <img
+            [src]="brand.imageUrl"
+            [alt]="'Brand ' + brand.id"
+            loading="lazy"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+
+  </div>
+</section>
+
+
+<section id="hero" class="hero-section">
+  <div class="hero-container">
+    <!-- Left Text -->
+    <div class="hero-text">
+      <h1>{{ 'HERO_MAIN.TITLE' | t }}</h1>
+    
+      <p>{{ 'HERO_MAIN.DESCRIPTION' | t }}</p>
+    
+      <button class="contact-btn">{{ 'COMMON.CONTACT_US' | t }}</button>
+    </div>
+
+    <!-- Right Image -->
+    <div class="hero-image">
+      <img src="../../../assets/images/helpimage.png" alt="Customer Service">
+    </div>
+  </div>
+</section>
+
+<section class="prices-page" id="pricingPlans">
+  <!-- Header -->
+  
+
+  <!-- Cards Grid -->
+  <div class="prices-grid">
+
+    <div class="price-card" *ngFor="let price of AllPrices()">
+
+      <!-- Image -->
+      <div class="card-image">
+        <img [src]="price.imageCover" alt="price image">
+
+        <!-- Discount -->
+        <span class="discount-badge">
+          <i class="bi-tag-fill"></i> {{ price.priceTranlationDtos[0]?.discount }} OFF
+        </span>
+      </div>
+
+      <!-- Body -->
+      <div class="card-body">
+
+        <h3 class="title">
+          {{ price.priceTranlationDtos[0]?.title }}
+        </h3>
+
+        <p class="description">
+          {{ price.priceTranlationDtos[0]?.description }}
+        </p>
+
+        <!-- Static Highlights -->
+        <div class="highlights">
+          <span><i class="bi-check-circle"></i> {{ 'HIGHLIGHTS.NO_SETUP' | t }}</span>
+          <span><i class="bi-check-circle"></i> {{ 'HIGHLIGHTS.SUPPORT_247' | t }}</span>
+          <span><i class="bi-check-circle"></i> {{ 'HIGHLIGHTS.CANCEL_ANYTIME' | t }}</span>
+        </div>
+        
+
+        <!-- Price -->
+        <div class="price">
+          <span class="currency">€</span>
+          <span class="amount">
+            {{ price.priceTranlationDtos[0]?.priceService }}
+          </span>
+          <span class="period">{{ 'HIGHLIGHTS.PER_MONTH' | t }}</span>
+        </div>
+
+        <!-- Features -->
+        <ul class="features">
+          <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeFirst }}</li>
+          <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeSecond }}</li>
+          <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeThird }}</li>
+          <li><i class="bi-check-circle"></i> {{ price.priceTranlationDtos[0]?.includeForth }}</li>
+        </ul>
+
+        <!-- Footer Note -->
+        <p class="note">{{ 'HIGHLIGHTS.NOTE' | t }}</p>
+
+
+        <!-- Button -->
+        <div class="container-button">
+          <div class="hover bt-1"></div>
+          <div class="hover bt-2"></div>
+          <div class="hover bt-3"></div>
+          <div class="hover bt-4"></div>
+          <div class="hover bt-5"></div>
+          <div class="hover bt-6"></div>
+          <button class="fancy-btn"></button>
+        </div>
+        
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials section">
+  <h2>{{ 'TESTIMONIALS.TITLE' | t }}</h2>
+
+  <swiper-container
+    slides-per-view="1"
+    space-between="30"
+      slides-per-view="2" 
+      slides-per-group="1"    
+    loop="true"
+    autoplay="true"
+    pagination="true"
+    navigation="true"
+    breakpoints='{
+      "0": {"slidesPerView": 1},
+      "768": {"slidesPerView": 2}
+    }'
+    style="width: 80%; margin: auto;"
+  >
+    <swiper-slide *ngFor="let t of testimonials">
+      <div class="testimonial-card">
+        <h3 class="testimonial-name">{{ t.name }}</h3>
+        <p class="testimonial-review">{{ t.review }}</p>
+        <div class="testimonial-rating">
+          <span *ngFor="let s of [].constructor(t.rating)" class="star">&#9733;</span>
+          <span *ngFor="let s of [].constructor(5 - t.rating)" class="star empty">&#9733;</span>
+        </div>
+        <img [src]="t.image" class="testimonial-img" />
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</section>

@@ -1,0 +1,132 @@
+<div class="about-section" *ngIf="aboutdataData() as about">
+
+  <!-- الجزء الأول: Title + Description -->
+  <div class="about-header">
+    <h2 class="about-title">{{ about.aboutTranslationDtos[0].title }}</h2>
+    <p class="about-description">{{ about.aboutTranslationDtos[0].description }}</p>
+  </div>
+
+
+  <div class="why-choose-section">
+    <!-- Header -->
+    <div class="why-header">
+      <h2 class="why-title">
+        {{ 'WHY.TITLE' | t }}
+      </h2>
+    
+      <p class="why-subtitle">
+        {{ 'WHY.SUBTITLE' | t }}
+      </p>
+    
+      <p class="why-description">
+        {{ 'WHY.DESCRIPTION' | t }}
+      </p>
+    </div>
+    
+  
+    <!-- Counters -->
+    <div class="counters">
+      <div class="counter-card">
+        <i class="fas fa-envelope"></i>
+        <h3 class="counter" [attr.data-target]="547000">547 K+</h3>
+        <p>Email Handled</p>
+      </div>
+  
+      <div class="counter-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3 class="counter" [attr.data-target]="100">100 %
+        </h3>
+        <p>Security Measures</p>
+      </div>
+  
+      <div class="counter-card">
+        <i class="fas fa-star"></i>
+        <h3 class="counter" [attr.data-target]="12000">12 K
+        </h3>
+        <p>Reviews Handled</p>
+      </div>
+  
+      <div class="counter-card">
+        <i class="fas fa-users"></i>
+        <h3 class="counter" [attr.data-target]="97">97 %
+        </h3>
+        <p>Support Team Efficiency</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="about-subtitle">
+    <i class="fas fa-info-circle"></i>
+    <span>
+      {{ 'WHY.TAGLINE' | t }}
+    </span>
+      </div>
+  <!-- Section 1 -->
+  <div class="about-content">
+    <div class="about-text">
+      <p>
+        {{ 'ABOUT.INTRO' | t }}
+      </p>
+      
+      <p>
+        <strong>{{ 'ABOUT.MISSION_TITLE' | t }}</strong><br />
+        {{ 'ABOUT.MISSION_TEXT' | t }}
+      </p>
+      
+      <p>
+        <strong>{{ 'ABOUT.VISION_TITLE' | t }}</strong><br />
+        {{ 'ABOUT.VISION_TEXT' | t }}
+      </p>
+      
+      <p>
+        {{ 'ABOUT.COMMITMENT' | t }}
+      </p>
+      
+      <p>
+        {{ 'ABOUT.SERVICES' | t }}
+      </p>
+      
+      <p>
+        {{ 'ABOUT.LANGUAGES' | t }}
+      </p>
+      
+      <p>
+        {{ 'ABOUT.SYSTEM' | t }}
+      </p>
+      
+      <p>
+        {{ 'ABOUT.AVAILABILITY' | t }}
+      </p>
+      
+    </div>
+    <div class="about-image">
+      <img [src]="about.imageCover" alt="About Image" />
+    </div>
+  </div>
+
+
+</div>
+
+<div class="about-team-section" *ngIf="aboutteamData() as team">
+  <h2 class="team-title">The experts behind your success
+  </h2>
+
+  <div class="team-list">
+    <div class="team-card" *ngFor="let member of team">
+      
+      <!-- الصورة والوظيفة -->
+      <div class="team-image">
+        <img [src]="member.imageCover" [alt]="member.aboutTeamTranlationDtos[0].name" />
+        <span class="team-position">{{ member.aboutTeamTranlationDtos[0].position }}</span>
+      </div>
+
+      <!-- الاسم والوصف -->
+      <div class="team-body">
+        <h3 class="team-name">{{ member.aboutTeamTranlationDtos[0].name }}</h3>
+        <p class="team-description">{{ member.aboutTeamTranlationDtos[0].description }}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
