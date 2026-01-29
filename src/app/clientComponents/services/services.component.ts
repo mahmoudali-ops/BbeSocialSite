@@ -42,10 +42,12 @@ export class ServicesComponent extends ReloadableComponent {
         this.loadServiceFeatures();
         this.onReload(() => this.loadServiceFeatures())
         this.loadServiceCores();
-        this.onReload(() => this.loadServiceFeatures())
+        this.onReload(() => this.loadServiceCores())
         this.loadBrandsImages();
         this.onReload(() => this.loadBrandsImages())
         }
+
+
        loadServiceFeatures() {
         this.serviceFeatureService.getContactData()
         .pipe(takeUntil(this.destroy$))
