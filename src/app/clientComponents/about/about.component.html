@@ -108,8 +108,8 @@
 </div>
 
 <div class="about-team-section" *ngIf="aboutteamData() as team">
-  <h2 class="team-title">The experts behind your success
-  </h2>
+  <h2 class="team-title">{{ 'TEAM.TITLE' | t }}</h2>
+
 
   <div class="team-list">
     <div class="team-card" *ngFor="let member of team">

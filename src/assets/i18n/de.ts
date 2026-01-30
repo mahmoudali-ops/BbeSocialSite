@@ -37,7 +37,8 @@ export const DE = {
   CAREER: {
     SUBTITLE:
       'Wir suchen engagierte Persönlichkeiten mit großem Interesse am Kundenservice-Marketing, die unser dynamisches und innovatives Team verstärken möchten.',
-      UPDATED: 'Aktualisiert'
+      UPDATED: 'Aktualisiert',
+      Title: 'Karriere'
     },
     APPLY: {
       TITLE: 'So bewerben Sie sich',
@@ -198,6 +199,10 @@ export const DE = {
       },
       SERVICES: {
         TITLE: "Unsere Dienstleistungen"
+      },
+
+      TEAM: {
+        TITLE: "Die Experten hinter Ihrem Erfolg"
       }
     
     

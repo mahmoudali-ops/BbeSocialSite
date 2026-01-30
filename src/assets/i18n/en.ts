@@ -46,7 +46,8 @@ export const EN = {
   CAREER: {
     SUBTITLE:
       'We are looking for passionate individuals with a strong interest in customer service marketing to join our dynamic and innovative team.',
-      UPDATED: 'Updated'
+      UPDATED: 'Updated',
+      Title: 'Careers'
   },
 
   APPLY: {
@@ -73,9 +74,9 @@ export const EN = {
 
   },
   SERV_INTRO: {
-    HEADLINE: 'Unsere herausragenden Dienstleistungen bei BBESocial',
-    DESCRIPTION: 'Bei BBESocial bieten wir erstklassige Lösungen, die darauf ausgelegt sind, Ihr Unternehmen voranzubringen. Unsere Dienstleistungen sind maßgeschneidert, innovativ und auf hervorragende Ergebnisse fokussiert.',
-    FEATURE_XP1: 'Schnell & Effizient',
+    HEADLINE: 'Our Outstanding Services at BBESocial',
+    DESCRIPTION: 'At BBESocial, we deliver premium solutions designed to drive your business forward. Our services are tailored, innovative, and focused on achieving exceptional results.',
+     FEATURE_XP1: 'Schnell & Effizient',
     FEATURE_XP2: 'Expertenteam',
     FEATURE_XP3: 'Zertifizierte Qualität'
   },
@@ -202,6 +203,9 @@ HERO_MAIN: {
 },
 SERVICES: {
   TITLE: "Our Services"
+},
+TEAM: {
+  TITLE: "The experts behind your success"
 }
 
   };

@@ -37,7 +37,8 @@ export const Hl = {
   CAREER: {
     SUBTITLE:
       'Wij zijn op zoek naar gepassioneerde mensen met een sterke interesse in klantenservice en marketing om ons dynamische en innovatieve team te versterken.',
-      UPDATED: 'Bijgewerkt'
+      UPDATED: 'Bijgewerkt',
+      Title: 'Carrière'
     },
     APPLY: {
       TITLE: 'Hoe solliciteren',
@@ -201,5 +202,8 @@ export const Hl = {
 
       SERVICES: {
         TITLE: "Onze Diensten"
+      },
+      TEAM: {
+        TITLE: "De experts achter uw succes"
       }
   };
