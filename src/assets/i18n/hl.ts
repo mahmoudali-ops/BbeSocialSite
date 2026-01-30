@@ -190,5 +190,16 @@ export const Hl = {
         TITLE: 'WIJ MAKEN JE LEVEN EENVOUDIGER',
         DESCRIPTION:
           'Wij zijn hier om te helpen. Geen tijd om uw klanten te beantwoorden? Laat ons u helpen – wij zijn uw klantenservice. Wij zijn anders: slimmer, vriendelijker en efficiënter. We beantwoorden vragen, lossen problemen op, controleren verzendinformatie, valideren retouren, verstrekken terugbetalingen, reageren direct op reviews en houden uw administratie op orde.'
+      },
+
+      SKILLS: {
+        PRE_SALES: "Pre-sales ondersteuning",
+        MULTILINGUAL: "Meertalige ondersteuning",
+        E_COMM: "E-Comm operaties",
+        SOLVE_ISSUES: "Oplossen van klantproblemen"
+      },
+
+      SERVICES: {
+        TITLE: "Onze Diensten"
       }
   };

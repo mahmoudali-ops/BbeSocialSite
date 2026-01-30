@@ -1,4 +1,12 @@
 export const EN = {
+
+
+  SKILLS: {
+    PRE_SALES: "Pre-sales support",
+    MULTILINGUAL: "Multilingual support",
+    E_COMM: "E-Comm operations",
+    SOLVE_ISSUES: "Solve customer issues"
+  },
   WHY: {
     TITLE: 'Why Choose Us',
     SUBTITLE: 'Unveiling The Success Of Our Achievements',
@@ -191,6 +199,9 @@ HERO_MAIN: {
   TITLE: 'WE MAKE YOUR LIFE EASIER',
   DESCRIPTION:
     "We're here to help. Don’t have time to answer your customers? Let us help you, we will be your customer service. We are different from others. Smarter, more welcoming and efficient. We answer questions, solve problems, check shipping information, validate returns, provide refunds, respond to reviews immediately and keep your administration in order."
+},
+SERVICES: {
+  TITLE: "Our Services"
 }
 
   };

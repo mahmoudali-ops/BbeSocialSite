@@ -86,7 +86,7 @@
         <!-- Skills -->
         <div class="skill" *ngFor="let skill of skills">
           <div class="skill-title">
-            <span>{{ skill.title }}</span>
+            <span>{{ skill.titleKey | t }}</span>
             <span class="percent">{{ skill.percent }}%</span>
           </div>
           <div class="skill-bar">
@@ -118,7 +118,7 @@
 
     <!-- Services -->
     <div class="services-section">
-      <h3>Our Services</h3>
+      <h3>{{ 'SERVICES.TITLE' | t }}</h3>
     
       <div class="services-row">
     

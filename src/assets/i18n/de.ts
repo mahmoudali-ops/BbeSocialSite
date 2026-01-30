@@ -188,6 +188,16 @@ export const DE = {
         TITLE: 'WIR MACHEN IHR LEBEN EINFACHER',
         DESCRIPTION:
           'Wir sind hier, um zu helfen. Keine Zeit, Ihre Kunden zu beantworten? Lassen Sie uns helfen – wir übernehmen Ihren Kundenservice. Wir sind anders als andere: intelligenter, freundlicher und effizienter. Wir beantworten Fragen, lösen Probleme, prüfen Versandinformationen, validieren Rücksendungen, erstatten Zahlungen, reagieren sofort auf Bewertungen und halten Ihre Verwaltung in Ordnung.'
+      },
+
+      SKILLS: {
+      PRE_SALES: "Vertriebsvorbereitung",
+        MULTILINGUAL: "Mehrsprachiger Support",
+        E_COMM: "E-Commerce-Betrieb",
+        SOLVE_ISSUES: "Kundenprobleme lösen"
+      },
+      SERVICES: {
+        TITLE: "Unsere Dienstleistungen"
       }
     
     

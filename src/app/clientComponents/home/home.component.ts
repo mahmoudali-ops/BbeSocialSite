@@ -160,10 +160,10 @@ ngAfterViewInit() {
 primaryColor = '#f14c05';
 
 skills = [
-  { title: 'Pre-sales support', percent: 94 },
-  { title: 'Multilingual support', percent: 91 },
-  { title: 'E-Comm operations', percent: 94 },
-  { title: 'Solve customer issues', percent: 84 },
+  { titleKey: 'SKILLS.PRE_SALES', percent: 94 },
+  { titleKey: 'SKILLS.MULTILINGUAL', percent: 91 },
+  { titleKey: 'SKILLS.E_COMM', percent: 94 },
+  { titleKey: 'SKILLS.SOLVE_ISSUES', percent: 84 },
 ];
 
 services = [
