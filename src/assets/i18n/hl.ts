@@ -205,5 +205,10 @@ export const Hl = {
       },
       TEAM: {
         TITLE: "De experts achter uw succes"
+      },
+      CONTACT: {
+        INTRO: "Neem contact op",
+        TITLE_BEFORE: "Laten we uw",
+        TITLE_HIGHLIGHT: "klantenservice-doelen bespreken"
       }
   };

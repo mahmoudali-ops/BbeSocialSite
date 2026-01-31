@@ -34,7 +34,7 @@
 }
 
 .hero-content h1 .highlight {
-  color: #f14c05; /* Changed to orange */
+  color: #fe7c7e; /* Changed to orange */
   position: relative;
   display: inline-block;
 }
@@ -517,7 +517,7 @@
 
 /* ===== Why Box ===== */
 .why-box {
-  background: #fff7f3;
+  background: #9f9894;
   padding: 25px;
   border-radius: 16px;
   margin-top: 40px;
@@ -681,7 +681,7 @@
 
 /* ===== Title ===== */
 .why-box h3 {
-  color: var(--primary);
+  color: #fc7a7c;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -689,7 +689,7 @@
 
 /* ===== Text ===== */
 .why-box p {
-  color: #444;
+  color: #010101;
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 18px;
@@ -735,13 +735,14 @@
   font-weight: 800;
 }
 :root {
-  --primary: #f14c05;
+  --primary: #fe7c7e;
 }
 
 /* ===== Section ===== */
 .services-section {
   margin-top: 80px;
   text-align: center;
+  color: #fe7c7e;
 }
 
 .services-section h3 {
@@ -875,7 +876,7 @@
 }
 
 .bbe-multi-subtitle {
-  color: #ff6600;
+  color: #fc7a7c;
   font-size: 20px;  /* كبرنا شويه */
   font-weight: 700;
   margin-bottom: 12px;
@@ -883,6 +884,8 @@
 }
 
 .bbe-multi-title {
+  color: #fc7a7c;
+
   font-size: 42px; /* كبرنا بشكل ملحوظ */
   font-weight: 800;
   margin-bottom: 25px;
@@ -890,8 +893,8 @@
 }
 
 .bbe-multi-text {
+  color: #fc7a7c;
   font-size: 18px; /* كبرنا النص */
-  color: #555;
   margin-bottom: 35px;
   line-height: 1.6;
 }
@@ -938,6 +941,8 @@
 
   .bbe-multi-title {
     font-size: 32px;
+     color: #fc7a7c;
+    ;
   }
 
   .bbe-multi-subtitle {
@@ -950,7 +955,8 @@
 }
 /* ==== Subtitle ==== */
 .bbe-multi-subtitle {
-  color: #ff6600;         /* لون برتقالي جذاب */
+  color: #fc7a7c;
+  /* لون برتقالي جذاب */
   font-size: 22px;        /* أكبر شويه */
   font-weight: 700;       /* عريض */
   margin-bottom: 12px;
@@ -964,7 +970,6 @@
   font-weight: 800;       /* أكثر سمكاً */
   margin-bottom: 25px;
   line-height: 1.2;
-  color: #222222;         /* لون داكن واضح */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1); /* خفيف لإبراز العنوان */
 }
 

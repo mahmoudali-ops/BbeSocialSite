@@ -203,6 +203,11 @@ export const DE = {
 
       TEAM: {
         TITLE: "Die Experten hinter Ihrem Erfolg"
+      },
+      CONTACT: {
+        INTRO: "Kontaktieren Sie uns",
+        TITLE_BEFORE: "Lassen Sie uns über Ihre",
+        TITLE_HIGHLIGHT: "Customer-Service-Ziele sprechen"
       }
     
     

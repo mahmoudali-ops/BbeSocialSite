@@ -46,12 +46,13 @@
       <div class="contact-form animated-float">
 
         <div class="form-intro">
-          <span>Get in touch</span>
+          <span>{{ 'CONTACT.INTRO' | t }}</span>
           <h3>
-            Let's discuss your
-            <strong>Customer Service goals</strong>
+            {{ 'CONTACT.TITLE_BEFORE' | t }}
+            <strong>{{ 'CONTACT.TITLE_HIGHLIGHT' | t }}</strong>
           </h3>
         </div>
+        
 
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
 
@@ -91,16 +92,14 @@
 <!-- =======================
    Location Section
 ======================= -->
-<section class="location-section">
+<!-- <section class="location-section">
   <div class="container">
 
-    <!-- عنوان ووصف -->
     <div class="location-header">
       <h2>{{ 'LOCATION.TITLE' | t }}</h2>
       <p>{{ 'LOCATION.DESCRIPTION' | t }}</p>
     </div>
 
-    <!-- خريطة Google Maps -->
     <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12974.034794303665!2d33.841446643084794!3d27.204893675150586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zU2Vsa2hldCBQYXB5cnVz2IwgQiAyMTYgS2F3c2FyIERpc3RyaWN0LCBNb2hhbWVkIFNhZWQgc3QgZXh0LiBvZiBNZXRybyBNYXJrZXQgc3TYjCDZgtiz2YUg2KPZiNmEINin2YTYutix2K_Zgtip!5e1!3m2!1sar!2seg!4v1769279257770!5m2!1sar!2seg"
@@ -114,6 +113,6 @@
     </div>
 
   </div>
-</section>
+</section> -->
 
 

@@ -152,6 +152,11 @@
   color: var(--text-dark);
 }
 
+.form-intro strong {
+  color: #fd7b7d;
+
+}
+
 /* =====================
    Inputs
 ===================== */

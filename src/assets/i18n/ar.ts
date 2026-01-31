@@ -203,6 +203,12 @@ export const AR = {
 
    TEAM: {
     TITLE: "الخبراء وراء نجاحك"
+  },
+
+  CONTACT: {
+    INTRO: "تواصل معنا",
+    TITLE_BEFORE: "دعنا نناقش",
+    TITLE_HIGHLIGHT: "أهداف خدمة العملاء الخاصة بك"
   }
     
   };

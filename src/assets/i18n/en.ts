@@ -206,6 +206,11 @@ SERVICES: {
 },
 TEAM: {
   TITLE: "The experts behind your success"
+},
+CONTACT: {
+  INTRO: "Get in touch",
+  TITLE_BEFORE: "Let's discuss your",
+  TITLE_HIGHLIGHT: "Customer Service goals"
 }
 
   };
