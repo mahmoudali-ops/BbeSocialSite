@@ -29,11 +29,11 @@
               {{ 'HERO.DESCRIPTION' | t }}
             </p>
         
-            <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
-              <a href="portfolio.html" class="btn btn-primary">
+            <div  data-aos="fade-up" data-aos-delay="500">
+              <a routerLink="/about" class="btn btn-primary">
                 {{ 'HERO.CTA_PRIMARY' | t }}
               </a>
-              <a href="contact.html" class="btn btn-outline">
+              <a href="https://wa.me/+31649141787" class="btn btn-outline">
                 {{ 'COMMON.GET_IN_TOUCH' | t }}
               </a>
             </div>
@@ -271,7 +271,7 @@
     
       <p>{{ 'HERO_MAIN.DESCRIPTION' | t }}</p>
     
-      <button class="contact-btn">{{ 'COMMON.CONTACT_US' | t }}</button>
+      <button routerLink="/contact" class="contact-btn">{{ 'COMMON.CONTACT_US' | t }}</button>
     </div>
 
     <!-- Right Image -->
@@ -341,15 +341,18 @@
 
 
         <!-- Button -->
-        <div class="container-button">
-          <div class="hover bt-1"></div>
-          <div class="hover bt-2"></div>
-          <div class="hover bt-3"></div>
-          <div class="hover bt-4"></div>
-          <div class="hover bt-5"></div>
-          <div class="hover bt-6"></div>
-          <button class="fancy-btn"></button>
-        </div>
+        <a href="https://wa.me/31649141787" target="_blank" style="text-decoration: none;">
+          <div class="container-button">
+            <div class="hover bt-1"></div>
+            <div class="hover bt-2"></div>
+            <div class="hover bt-3"></div>
+            <div class="hover bt-4"></div>
+            <div class="hover bt-5"></div>
+            <div class="hover bt-6"></div>
+            <button class="fancy-btn"></button>
+          </div>
+        </a>
+        
         
 
       </div>
