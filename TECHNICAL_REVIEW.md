@@ -13,7 +13,7 @@ A production-ready Angular 17 enterprise application implementing modern web dev
 • **Modern Control Flow Syntax** - @if, @for directives replacing structura l directives
 • **View Transitions API** - Smooth page transitions configured in router
 • **Client Hydration** - SSR with full hydration support for optimal performance
-• **Functional Guards & Interceptors** - Modern functional imple mentation using inject() pattern
+• **Functional Guards & Interceptors** - Modern functional imple mentation using in ject() pattern
 
 ---
 
