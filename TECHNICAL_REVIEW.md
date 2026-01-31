@@ -10,7 +10,7 @@ A production-ready Angular 17 enterprise application implementing modern web dev
 • **Angular 17.3.0** - Latest stable release with cutting-edge features
 • **Standalone Components Architecture** - 51+ components using standalone pattern (no NgModules)
 • **Angular Signals API** - Reactive state management using signals for language, translations, and component state
-• **Modern Control Flow Syntax** - @if, @for directives replacing structural directives
+• **Modern Control Flow Syntax** - @if, @for directives replacing structura l directives
 • **View Transitions API** - Smooth page transitions configured in router
 • **Client Hydration** - SSR with full hydration support for optimal performance
 • **Functional Guards & Interceptors** - Modern functional imple mentation using inject() pattern
