@@ -67,7 +67,7 @@
   font-size: 30px;
   line-height: 1.35;
   margin-bottom: 14px;
-  color: var(--text-dark);
+  color: #fe7c7e;
 }
 
 .customer-service-intro h3 span {
@@ -277,7 +277,7 @@ button:hover {
   max-width: 650px;
   margin: 14px auto 0;
   font-size: 16px;
-  background: linear-gradient(90deg, #fd7b7d, #ff9a9c);
+  background: linear-gradient(90deg, #000000, #0e0d0d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientMove 8s ease infinite;

@@ -133,7 +133,7 @@ export const EN = {
     CLIENT_SATISFACTION: 'Client Satisfaction',
     NO_SETUP: 'No Setup Fees',
     CANCEL_ANYTIME: 'Cancel Anytime',
-    PER_MONTH: '/ Monat',
+    PER_MONTH: '/ Month',
     NOTE: 'Ideal für wachsende Unternehmen, die zuverlässige und skalierbare Unterstützung benötigen.'
  
   },
@@ -211,6 +211,12 @@ CONTACT: {
   INTRO: "Get in touch",
   TITLE_BEFORE: "Let's discuss your",
   TITLE_HIGHLIGHT: "Customer Service goals"
-}
+},
+
+CUSTOM_PACKAGE: {
+    TITLE: "Customize Your Package",
+    DESCRIPTION: "We offer fully customized solutions tailored to your exact needs. You choose the services, features, and pricing that work best for your business.",
+    BUTTON: "Build Your Package"
+  }
 
   };

@@ -53,7 +53,7 @@
 .hero-content h2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #f14c05; /* Changed to orange */
+  color: #fe7c7e; /* Changed to orange */
   margin-bottom: 1.5rem;
   min-height: 2.5rem;
 }
@@ -66,7 +66,7 @@
 .hero-content p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #f14c05; /* Changed to orange */
+  color: #020202; /* Changed to orange */
   margin-bottom: 2rem;
   max-width: 90%;
   opacity: 0.9;
@@ -95,7 +95,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #f14c05 0%, #d44300 100%); /* Orange gradient */
+  background: linear-gradient(135deg, #fe7c7e 0%, #fe7c7e 100%); /* Orange gradient */
   color: white;
   box-shadow: 0 4px 15px rgba(241, 76, 5, 0.3);
 }
@@ -460,7 +460,7 @@
     display: none;
   }
 }:root {
-  --primary: #f14c05;
+  --primary: #fe7c7e;
 }
 
 /* ===== Section ===== */
@@ -1058,7 +1058,7 @@
   font-size: 2.5rem;       /* أكبر من قبل */
   margin-bottom: 50px;
   font-weight: 800;
-  color: #ff5722;          /* لون جذاب */
+  color: #fe7c7e;          /* لون جذاب */
 }
 
 /* كروت السلايدر */
@@ -1085,7 +1085,7 @@
   font-size: 1.6rem;       /* أكبر */
   font-weight: 700;
   margin: 15px 0 10px 0;
-  color: #3f51b5;          /* لون جذاب */
+  color: #fe7c7e;          /* لون جذاب */
 }
 
 /* نص الريفيو */
@@ -1146,7 +1146,7 @@
   font-size: 2.5rem;
   margin-bottom: 50px;
   font-weight: 800;
-  color: #ff5722;
+  color: #fe7c7e;
 }
 
 .testimonial-swiper {
@@ -1175,7 +1175,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin: 15px 0 10px 0;
-  color: #3f51b5;
+  color: #fe7c7e;
 }
 
 .testimonial-review {
@@ -1481,7 +1481,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #fe7c7e 0%, #fe7c7e 100%);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
@@ -1652,7 +1652,7 @@
     position: absolute;
     inset: 0;
     border-radius: 14px;
-    border: 2px solid #8d302b;
+    border: 2px solid #fe7c7e;
     background: transparent;
     font-weight: 700;
     font-size: 15px;
@@ -1664,7 +1664,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #fd7b7d, #ad4143);
+    background: linear-gradient(135deg, #fd7b7d, #fe7c7e);
     border-radius: 14px;
     z-index: -1;
     transition: all .3s ease;

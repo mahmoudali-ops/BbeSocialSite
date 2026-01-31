@@ -210,5 +210,11 @@ export const Hl = {
         INTRO: "Neem contact op",
         TITLE_BEFORE: "Laten we uw",
         TITLE_HIGHLIGHT: "klantenservice-doelen bespreken"
+      },
+
+      CUSTOM_PACKAGE: {
+        TITLE: "Stel uw pakket samen",
+        DESCRIPTION: "Wij bieden volledig op maat gemaakte oplossingen die aansluiten op uw specifieke behoeften. U kiest de diensten, functies en prijs die bij u passen.",
+        BUTTON: "Stel uw pakket samen"
       }
   };

@@ -209,6 +209,12 @@ export const DE = {
         TITLE_BEFORE: "Lassen Sie uns über Ihre",
         TITLE_HIGHLIGHT: "Customer-Service-Ziele sprechen"
       }
-    
+    ,
+
+    CUSTOM_PACKAGE: {
+      TITLE: "Passen Sie Ihr Paket an",
+      DESCRIPTION: "Wir bieten vollständig maßgeschneiderte Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind. Sie bestimmen die Services, Funktionen und den Preis.",
+      BUTTON: "Paket erstellen"
+    }
     
   };

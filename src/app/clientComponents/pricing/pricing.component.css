@@ -86,7 +86,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #fe7c7e 0%, #fe7c7e 100%);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
@@ -495,7 +495,7 @@
   }
   
   .highlight-text {
-    background: linear-gradient(135deg, #ff3204, #bd4708);
+    background: linear-gradient(135deg, #fe7c7e, #fe7c7e);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1190,7 +1190,7 @@
     position: absolute;
     inset: 0;
     border-radius: 14px;
-    border: 2px solid #8d302b;
+    border: 2px solid #fe7c7e;
     background: transparent;
     font-weight: 700;
     font-size: 15px;
@@ -1202,7 +1202,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #fd7b7d, #ad4143);
+    background: linear-gradient(135deg, #fd7b7d, #fe7c7e);
     border-radius: 14px;
     z-index: -1;
     transition: all .3s ease;
@@ -1231,3 +1231,80 @@
   .container-button {
     margin: 2rem auto 0;
   }
+
+  .custom-package-section {
+    background: linear-gradient(135deg, #fe7c7e, #ff9a9c);
+    padding: 60px 16px;
+  }
+  
+  .custom-package-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  
+  .custom-package-content .text {
+    flex: 1;
+    color: #fff;
+  }
+  
+  .custom-package-content h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  
+  .custom-package-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 24px;
+  }
+  
+  .custom-btn {
+    background: #fff;
+    color: #fe7c7e;
+    border: none;
+    padding: 12px 26px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+  }
+  
+  .custom-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+  }
+  
+  .custom-package-content .image {
+    flex: 0.9;
+    text-align: right;
+  }
+  
+  .custom-package-content img {
+    max-width: 90%;
+    border-radius: 18px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .custom-package-content {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .custom-package-content .image {
+      text-align: center;
+    }
+  
+    .custom-package-content img {
+      max-width: 75%;
+    }
+  }
+  
