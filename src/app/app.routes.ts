@@ -28,7 +28,8 @@ export const routes: Routes = [
         { path: 'career', loadComponent: () => import('./clientComponents/career/career.component').then(m => m.CareerComponent) },
         { path: 'faq', loadComponent: () => import('./clientComponents/faq/faq.component').then(m => m.FaqComponent) },
         { path: 'contact', loadComponent: () => import('./clientComponents/contact/contact.component').then(m => m.ContactComponent) },
-       
+        { path: 'reviews', loadComponent: () => import('./clientComponents/reviews/reviews.component').then(m => m.ReviewsComponent) },
+
 
 
       ]

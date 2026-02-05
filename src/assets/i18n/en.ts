@@ -91,6 +91,7 @@ export const EN = {
     PRICING: 'Pricing',
     CAREER: 'Career',
     FAQS: 'FAQs',
+    REVIEWS: 'Reviews',
     CONTACT: 'Contact'
   },
   CUSTOMER_SERVICE: {
@@ -217,6 +218,11 @@ CUSTOM_PACKAGE: {
     TITLE: "Customize Your Package",
     DESCRIPTION: "We offer fully customized solutions tailored to your exact needs. You choose the services, features, and pricing that work best for your business.",
     BUTTON: "Build Your Package"
+  },
+
+  REVIEW: {
+    INTRO: "See what our clients say about working with us",
+    TITLE: "Reviews"
   }
 
   };

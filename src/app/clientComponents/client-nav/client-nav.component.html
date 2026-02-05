@@ -46,7 +46,8 @@
             {{ 'NAV.FAQS' | t }}
           </a>
         </li>
-        
+        <li><a routerLink="/reviews"routerLinkActive="active-link">{{ 'NAV.REVIEWS' | t }}</a></li>
+
         <li>
           <a routerLink="/contact" routerLinkActive="active-link">
             {{ 'NAV.CONTACT' | t }}
@@ -116,6 +117,7 @@
     <li><a routerLink="/pricing" (click)="closeOffcanvas()">{{ 'NAV.PRICING' | t }}</a></li>
     <li><a routerLink="/career" (click)="closeOffcanvas()"> {{ 'NAV.CAREER' | t }}</a></li>
     <li><a routerLink="/faq" (click)="closeOffcanvas()"> {{ 'NAV.FAQS' | t }}</a></li>
+    <li><a routerLink="/reviews"(click)="closeOffcanvas()">{{ 'NAV.REVIEWS' | t }}</a></li>
     <li><a routerLink="/contact" (click)="closeOffcanvas()">{{ 'NAV.CONTACT' | t }}</a></li>
   </ul>
 

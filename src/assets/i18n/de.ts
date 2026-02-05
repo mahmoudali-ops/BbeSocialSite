@@ -100,7 +100,9 @@ export const DE = {
         PRICING: 'Preise',
         CAREER: 'Karriere',
         FAQS: 'FAQs',
-        CONTACT: 'Kontakt'
+        CONTACT: 'Kontakt',
+        REVIEWS: 'Bewertungen',
+
       },
       CUSTOMER_SERVICE: {
         BADGE: 'Kundenservice',
@@ -215,6 +217,11 @@ export const DE = {
       TITLE: "Passen Sie Ihr Paket an",
       DESCRIPTION: "Wir bieten vollständig maßgeschneiderte Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind. Sie bestimmen die Services, Funktionen und den Preis.",
       BUTTON: "Paket erstellen"
+    },
+
+    REVIEW: {
+      INTRO: "Erfahren Sie, was unsere Kunden über die Zusammenarbeit mit uns sagen",
+    TITLE: "Bewertungen"
     }
     
   };

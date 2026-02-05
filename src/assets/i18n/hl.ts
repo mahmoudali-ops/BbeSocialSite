@@ -82,7 +82,9 @@ export const Hl = {
         PRICING: 'Prijzen',
         CAREER: 'Carrière',
         FAQS: 'Veelgestelde vragen',
-        CONTACT: 'Contact'
+        CONTACT: 'Contact',
+        REVIEWS: 'Avis',
+
       },
       CUSTOMER_SERVICE: {
         BADGE: 'Klantenservice',
@@ -216,5 +218,10 @@ export const Hl = {
         TITLE: "Stel uw pakket samen",
         DESCRIPTION: "Wij bieden volledig op maat gemaakte oplossingen die aansluiten op uw specifieke behoeften. U kiest de diensten, functies en prijs die bij u passen.",
         BUTTON: "Stel uw pakket samen"
+      },
+
+      REVIEW: {
+        INTRO: "Lees wat onze klanten zeggen over de samenwerking met ons",
+        TITLE: "Beoordelingen"
       }
   };
