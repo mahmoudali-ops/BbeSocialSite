@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { ReloadableComponent } from '../reloadable/reloadable.component';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TranslatedPipe } from '../../core/pipes/translate.pipe';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -22,6 +23,7 @@ export class ContactComponent extends ReloadableComponent {
   private readonly contactService = inject(ContactService);
   private readonly emailService = inject(EmailService);
   private readonly fb = inject(FormBuilder);
+  private readonly toastr = inject(ToastrService);
 
   // Signals
   ContactData: WritableSignal<IContact | null> = signal(null);
@@ -70,8 +72,11 @@ export class ContactComponent extends ReloadableComponent {
   // Submit Email Form
   // ========================
   submitForm() {
-    if (this.contactForm.invalid) return;
-
+    if (this.contactForm.invalid) {
+      this.toastr.warning('Please fill all required fields', 'Form Incomplete');
+      return;
+    }
+  
     const emailData: IEmail = {
       id: 0,
       fullName: this.contactForm.value.fullName,
@@ -80,21 +85,23 @@ export class ContactComponent extends ReloadableComponent {
       message: this.contactForm.value.message,
       createdAt: new Date().toISOString()
     };
-
+  
     this.EmailSubs()?.unsubscribe();
-
+  
     const sub = this.emailService.sendEmail(emailData).subscribe({
       next: () => {
-        console.log('Email Sent Successfully');
+        this.toastr.success('Your message has been sent successfully ✅', 'Success');
         this.contactForm.reset();
       },
       error: (err) => {
-        console.log('Send Email Error:', err);
+        this.toastr.error('Failed to send message ❌, please try again', 'Error');
+        console.error(err);
       }
     });
-
+  
     this.EmailSubs.set(sub);
   }
+  
 
 
 
