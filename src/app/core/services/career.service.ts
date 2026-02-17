@@ -14,4 +14,20 @@ export class CareerService {
     return this.httpClient.get(`${environment.BaseUrl}/api/Career`);
   }
 
+
+  createCareer(data:FormData):Observable<any>{
+    return this.httpClient.post(`${environment.BaseUrl}/api/Career`,data);
+  }
+  updateCareer(id:number,data:FormData):Observable<any>{
+    return this.httpClient.put(`${environment.BaseUrl}/api/Career/update/${id}`,data);
+  }
+  
+  getAllDetaildedCareer(id:number|null):Observable<any>{
+    return this.httpClient.get(`${environment.BaseUrl}/api/Career/GetAll/${id}`);
+  }
+
+  deleteCareer(id:number):Observable<any>{
+    return this.httpClient.delete(`${environment.BaseUrl}/api/Career/delete/${id}`);
+  }
+
 }

@@ -1,0 +1,58 @@
+<div class="service-core-update-container">
+    <h2>Update Service Core</h2>
+  
+    <!-- ========================= -->
+    <!-- Image Section -->
+    <!-- ========================= -->
+    <div class="image-section">
+        <label>Cover Image</label>
+        <div class="image-preview-block">
+          <ng-container *ngIf="imagePreview; else placeholder">
+            <img [src]="imagePreview" alt="Service Core Cover" class="preview-img">
+          </ng-container>
+          <ng-template #placeholder>
+            <div class="placeholder-img">No Image Selected</div>
+          </ng-template>
+        </div>
+      
+        <div class="image-actions">
+          <button type="button" class="btn btn-choose" (click)="fileInput.click()">Choose Image</button>
+          <button type="button" class="btn btn-remove" *ngIf="imagePreview" (click)="removeImage()">Remove</button>
+          <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+        </div>
+      </div>
+      
+  
+    <!-- ========================= -->
+    <!-- Language Tabs -->
+    <!-- ========================= -->
+    <div class="lang-tabs">
+      <button *ngFor="let lang of languages"
+              type="button"
+              [class.active]="selectedLang === lang"
+              (click)="selectedLang = lang">
+        {{ lang.toUpperCase() }}
+      </button>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Translation Form -->
+    <!-- ========================= -->
+    <form [formGroup]="serviceCoreForm" (ngSubmit)="onSubmit()">
+      <div class="translation-form" *ngFor="let lang of languages" [hidden]="selectedLang !== lang">
+        <div [formGroup]="getTranslationGroup(lang)">
+          <label>Title</label>
+          <input type="text" formControlName="title" placeholder="Service Core Title">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Service Core Description..." rows="6"></textarea>
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="serviceCoreForm.invalid">
+          Update Service Core
+        </button>
+      </div>
+    </form>
+  </div>

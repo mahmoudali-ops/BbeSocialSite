@@ -1,0 +1,84 @@
+
+<section class="dashboard-section container">
+    <h2 class="section-title">All Careers</h2>
+  
+    <!-- Add Button -->
+    <div class="add-tour-wrapper">
+      <button 
+        class="btn add-tour-btn" 
+        [routerLink]="['/admin/career-create']"
+       >
+        <i class="fa-solid fa-plus"></i>
+        Add New Career
+      </button>
+    </div>
+  
+    <!-- Career List -->
+    <div class="tour-list">
+  
+      <!-- Table Header -->
+      <div class="tour-row header">
+        <div class="tour-col id">ID</div>
+        <div class="tour-col title">Job Title</div>
+        <div class="tour-col type">Type</div>
+        <div class="tour-col salary">Salary</div>
+        <div class="tour-col actions">Actions</div>
+      </div>
+  
+      @for (career of careerData(); track career.id) {
+      <div class="tour-row">
+  
+        <!-- ID -->
+        <div class="tour-col id">
+          <span>#{{ career.id }}</span>
+        </div>
+  
+        <!-- Job Title -->
+        <div class="tour-col title">
+          <h3>
+            {{ career.careerCardTranslationsDto[0]?.jobTitle }}
+          </h3>
+        </div>
+  
+        <!-- Employment Type -->
+        <div class="tour-col type">
+          <span>
+            {{ career.careerCardTranslationsDto[0]?.employmentType }}
+          </span>
+        </div>
+  
+        <!-- Salary -->
+        <div class="tour-col salary">
+          <span>
+            {{ career.careerCardTranslationsDto[0]?.salaryFrom }}
+            -
+            {{ career.careerCardTranslationsDto[0]?.salaryTo }}
+            {{ career.careerCardTranslationsDto[0]?.salaryPeriod }}
+          </span>
+        </div>
+  
+        <!-- Actions -->
+        <div class="tour-col actions">
+          <button 
+            class="btn edit-btn"
+            title="Edit"
+            [routerLink]="['/admin/career-update',career.id]"
+            >
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+  
+          <button 
+            class="btn delete-btn"
+            title="Delete"
+            (click)="deleteCareer(career.id)"
+            >
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+  
+      </div>
+      }
+  
+    </div>
+  </section>
+  

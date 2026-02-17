@@ -1,0 +1,57 @@
+<div class="about-team-update-container">
+    <h2>Update Team Member</h2>
+  
+    <!-- ========================= -->
+    <!-- Image Section -->
+    <!-- ========================= -->
+    <div class="image-section">
+      <label>Member Image</label>
+      <div class="image-preview-block">
+        <img *ngIf="imagePreview; else placeholder" [src]="imagePreview" alt="Team Member" class="preview-img">
+        <ng-template #placeholder>
+          <div class="placeholder-img">No Image Selected</div>
+        </ng-template>
+        <div class="image-actions">
+          <button type="button" class="btn" (click)="fileInput.click()">Choose Image</button>
+          <button type="button" class="btn btn-remove" *ngIf="imagePreview" (click)="removeImage()">Remove</button>
+        </div>
+        <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+      </div>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Language Tabs -->
+    <!-- ========================= -->
+    <div class="lang-tabs">
+      <button *ngFor="let lang of languages"
+              type="button"
+              [class.active]="selectedLang === lang"
+              (click)="selectedLang = lang">
+        {{ lang.toUpperCase() }}
+      </button>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Translation Form -->
+    <!-- ========================= -->
+    <form [formGroup]="aboutTeamForm" (ngSubmit)="onSubmit()">
+      <div class="translation-form" *ngFor="let lang of languages" [hidden]="selectedLang !== lang">
+        <div [formGroup]="getTranslationGroup(lang)">
+          <label>Name</label>
+          <input type="text" formControlName="name" placeholder="Member Name">
+  
+          <label>Position</label>
+          <input type="text" formControlName="position" placeholder="e.g., CEO, Developer, Designer">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Member Description..." rows="4"></textarea>
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="aboutTeamForm.invalid">
+          Update Team Member
+        </button>
+      </div>
+    </form>
+  </div>

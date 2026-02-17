@@ -14,21 +14,35 @@
 
   <!-- Image -->
   <div class="faq-image">
-    <img [src]="faqData()?.imageCover" alt="FAQ Image" />
+    <img src="../../../assets/images/bibi2.webp" alt="FAQ Image" />
   </div>
 
   <!-- FAQ List -->
   <div class="faq-list">
-    <div class="faq-item" *ngFor="let faq of faqData()?.fAQsTranslationDTos; let i = index"
-         [class.active]="activeIndex === i">
-      <button class="faq-question" (click)="toggleFaq(i)">
-        {{ faq.question }}
-        <span class="arrow">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>{{ faq.answer }}</p>
+
+    @for (faq of faqData(); track faq.id; let i = $index) {
+  
+      <div class="faq-item" [class.active]="activeIndex === i">
+  
+        <button class="faq-question" (click)="toggleFaq(i)">
+          {{ faq.fAQsTranslationDTos[0]?.question }}
+          <span class="arrow">
+            {{ activeIndex === i ? '-' : '+' }}
+          </span>
+        </button>
+  
+        @if (activeIndex === i) {
+          <div class="faq-answer">
+            <p>{{ faq.fAQsTranslationDTos[0]?.answer }}</p>
+          </div>
+        }
+  
       </div>
-    </div>
+  
+    }
+  
   </div>
+  
+  
 
 </section>

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   IsSccuess = false;
   serverError: string = '';
-  returnUrl: string = '/admin/tours';
+  returnUrl: string = '/admin/emails';
 
   private readonly _router = inject(Router);
   private readonly _route = inject(ActivatedRoute);
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     });
 
     // الحصول على returnUrl من query params
-    this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/admin/tours';
+    this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/admin/emails';
   }
 
 // login.component.ts

@@ -1,0 +1,199 @@
+/* ================= Container ================= */
+
+.social-update-container {
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f1f5f9;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  /* ================= Form Groups ================= */
+  
+  .social-form .form-group {
+    margin-bottom: 22px;
+  }
+  
+  .social-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #1e293b;
+    letter-spacing: 0.3px;
+  }
+  
+  /* ================= Inputs ================= */
+  
+  .social-form input[type="text"],
+  .social-form input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    background: #f8fafc;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+  }
+  
+  .social-form input:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  
+  /* ================= Current Image ================= */
+  
+  .current-image {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f1f5f9;
+    border-radius: 16px;
+    border: 1px dashed #cbd5e1;
+    text-align: center;
+  }
+  
+  .current-image label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  .current-image img {
+    max-width: 280px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+  }
+  
+  .current-image img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* ================= New Image Preview ================= */
+  
+  .image-preview {
+    margin: 25px 0;
+    padding: 22px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+  
+  .image-preview:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  }
+  
+  .image-preview label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  .image-preview img {
+    max-width: 260px;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #f1f5f9;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+  }
+  
+  .image-preview img:hover {
+    transform: scale(1.05);
+  }
+  
+  .image-preview button {
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.25s ease;
+  }
+  
+  .image-preview button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+  }
+  
+  /* ================= Upload Button ================= */
+  
+  .social-form input[type="file"] {
+    position: relative;
+    width: 170px;
+    height: 38px;
+    font-size: 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .social-form input[type="file"]::file-selector-button {
+    height: 38px;
+    width: 170px;
+    border-radius: 8px;
+    border: none;
+    background: #ff9a9c;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.2);
+  }
+  
+  .social-form input[type="file"]::file-selector-button:hover {
+    background: #fb5558;
+    transform: translateY(-2px);
+  }
+  
+  /* ================= Submit Button ================= */
+  
+  .social-form button[type="submit"] {
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    letter-spacing: 0.4px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-form button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+  }
+  
+  /* ================= Responsive ================= */
+  
+  @media (max-width: 768px) {
+    .social-update-container {
+      padding: 20px;
+    }
+  
+    .current-image img,
+    .image-preview img {
+      height: auto;
+    }
+  }
+  

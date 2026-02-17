@@ -1,0 +1,50 @@
+<div class="faq-create-container">
+    <h2>Create FAQ</h2>
+  
+    <form [formGroup]="faqForm" (ngSubmit)="onSubmit()">
+  
+      <!-- ================= Image Upload ================= -->
+  
+      <!-- ================= Language Tabs ================= -->
+      <div class="lang-tabs">
+        <button type="button"
+                *ngFor="let lang of languages"
+                [class.active]="selectedLang === lang"
+                (click)="selectedLang = lang">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+  
+      <!-- ================= FAQ Fields ================= -->
+      <div formArrayName="fAQsTranslationDTos">
+        <div *ngFor="let group of fAQsTranslationDTos.controls; let i = index" 
+             [formGroupName]="i"
+             [hidden]="group.get('language')?.value !== selectedLang" 
+             class="translation-card">
+  
+          <label>Question</label>
+          <input type="text" formControlName="question" placeholder="Enter your question">
+  
+          <label>Answer</label>
+          <textarea formControlName="answer" placeholder="Enter the answer" rows="5"></textarea>
+        </div>
+      </div>
+  
+      <!-- ================= Validation Errors Summary ================= -->
+      <div class="error-summary" *ngIf="formErrors.length > 0">
+        <h4>Please fix these errors:</h4>
+        <ul>
+          <li *ngFor="let error of formErrors">
+            {{ error.label }} ({{ error.lang }})
+          </li>
+        </ul>
+      </div>
+  
+      <!-- ================= Submit ================= -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="faqForm.invalid">
+          Create FAQ
+        </button>
+      </div>
+    </form>
+  </div>

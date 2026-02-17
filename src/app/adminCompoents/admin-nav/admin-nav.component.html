@@ -1,38 +1,93 @@
-<header class="admin-topnav">
+<!-- TOP BAR -->
+<header class="admin-topbar">
+
   <!-- Left -->
-  <div class="topnav-left">
-    <img src="assets/images/admin3.jpg" alt="Admin Logo" class="logo" />
-    <h2 class="brand">Hi : Admin</h2>
+  <div class="topbar-left pointer" routerLink="/home">
+    <img src="../../../assets/images/bbesocaiallogo.png" alt="Logo" class="topbar-logo">
   </div>
 
-  <!-- Center Navigation -->
-  <ul class="topnav-links">
-    <li class="nav-item "><a routerLink="/"routerLinkActive="active-link"><i class="fa-solid fa-house-circle-check"></i> Home</a></li>
-    <li class="nav-item "><a routerLink="tours"routerLinkActive="active-link"><i class="fas fa-suitcase-rolling"></i> Tours</a></li>
-    <li class="nav-item"><a routerLink="categorytour"routerLinkActive="active-link"><i class="fa-solid fa-layer-group"></i>Category Tours</a></li>
-    <li class="nav-item"><a routerLink="destnaions"routerLinkActive="active-link"><i class="fa-solid fa-earth-americas"></i>Destnaions</a></li>
-    <li class="nav-item"><a routerLink="transfers"routerLinkActive="active-link"><i class="fa-solid fa-plane-up"></i> Transfers</a></li>
+  <!-- Center -->
+  <div class="topbar-center">
+    <h1>BbeSocial Admin</h1>
+  </div>
 
-    <!-- <li class="nav-item dropdown">
-      <a class="dropdown-toggle">
-        <i class="fa-solid fa-tv"></i> Services
-      </a>
-    
-      <ul class="dropdown-menu">
-        <li><a routerLink="hotels" routerLinkActive="active-link">Hotels</a></li>
-        <li><a routerLink="transfers" routerLinkActive="active-link">Transfers</a></li>
-      </ul>
-    </li> -->
-        <li class="nav-item"><a routerLink="emails"routerLinkActive="active-link"><i class="fas fa-calendar-check"></i> Bookings</a></li>
-    <li class="nav-item"><a routerLink="users"routerLinkActive="active-link"><i class="fas fa-users"></i> Users</a></li>
-    
-  </ul>
-
-  <!-- Right Section -->
-  <div class="topnav-right">
+  <!-- Right -->
+  <div class="topbar-right">
     <button class="logout-btn" (click)="onLogout()">
-      <span>Logout</span>
       <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
     </button>
   </div>
+
 </header>
+
+<!-- GRID NAV -->
+<nav class="admin-nav-grid">
+
+  <a routerLink="/admin/emails" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-envelope"></i>
+    <p>Emails</p>
+  </a>
+
+  <a routerLink="/admin/users" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-users"></i>
+    <p>Users</p>
+  </a>
+
+  <a routerLink="/admin/career" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-briefcase"></i>
+    <p>Career</p>
+  </a>
+
+  <a routerLink="/admin/servicefeature" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-star"></i>
+    <p>Service Feature</p>
+  </a>
+
+  <a routerLink="/admin/servicecore" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-cogs"></i>
+    <p>Service Core</p>
+  </a>
+
+  <a routerLink="/admin/aboutteam" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-people-group"></i>
+    <p>About Team</p>
+  </a>
+
+  <a routerLink="/admin/price" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-tags"></i>
+    <p>Pricing</p>
+  </a>
+
+  <a routerLink="/admin/faq" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-circle-question"></i>
+    <p>FAQ</p>
+  </a>
+
+  <a routerLink="/admin/social-update" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-share-alt"></i>
+    <p>Social Links</p>
+  </a>
+
+  <a routerLink="/admin/brandsimages" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-image"></i>
+    <p>Brand Images</p>
+  </a>
+
+  <a routerLink="/admin/contact-update" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-envelope"></i>
+    <p>Contact</p>
+  </a>
+
+  <a routerLink="/admin/about-update" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-info-circle"></i>
+    <p>About</p>
+  </a>
+
+  <a routerLink="/admin/home-update" routerLinkActive="active-card" class="nav-card">
+    <i class="fas fa-home"></i>
+    <p>Home</p>
+  </a>
+
+
+</nav>

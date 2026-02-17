@@ -1,0 +1,300 @@
+/* ===== Container ===== */
+.about-team-update-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* ===== Page Title ===== */
+  .about-team-update-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* ================= Image Section ================= */
+  .about-team-update-container .image-section {
+    margin-bottom: 25px;
+  }
+  
+  .about-team-update-container .image-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .about-team-update-container .image-preview-block {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px dashed #ff7c85;
+    background: #fff5f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .about-team-update-container .image-preview-block:hover {
+    box-shadow: 0 8px 20px rgba(255, 124, 133, 0.25);
+  }
+  
+  .about-team-update-container .preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+  }
+  
+  .about-team-update-container .preview-img:hover {
+    transform: scale(1.05);
+  }
+  
+  .about-team-update-container .placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: #ffe5e7;
+    color: #ff7c85;
+    border: 1px dashed #ffc1c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== Image Actions ===== */
+  .about-team-update-container .image-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .about-team-update-container .image-actions .btn {
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #ff7c85;
+    background: #fff0f2;
+    color: #ff3f57;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+  }
+  
+  .about-team-update-container .image-actions .btn:hover {
+    background: #ffdde0;
+  }
+  
+  .about-team-update-container .btn-remove {
+    background: #ef4444;
+    border: none;
+    color: #fff;
+  }
+  
+  .about-team-update-container .btn-remove:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+  }
+  
+  /* ================= Language Tabs ================= */
+  .about-team-update-container .lang-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 25px 0;
+  }
+  
+  .about-team-update-container .lang-tabs button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.25s ease;
+    color: #555;
+  }
+  
+  .about-team-update-container .lang-tabs button.active {
+    background: #ff7c85;
+    color: #fff;
+    border-color: #ff7c85;
+    box-shadow: 0 4px 12px rgba(255, 124, 133, 0.3);
+  }
+  
+  /* ================= Translation Form ================= */
+  .about-team-update-container .translation-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .about-team-update-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .about-team-update-container input[type="text"],
+  .about-team-update-container textarea {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+  }
+  
+  .about-team-update-container input:focus,
+  .about-team-update-container textarea:focus {
+    outline: none;
+    border-color: #ff7c85;
+    box-shadow: 0 0 0 3px rgba(255, 124, 133, 0.2);
+    background: #fff8f9;
+  }
+  
+  /* ================= Form Actions ================= */
+  .about-team-update-container .form-actions {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .about-team-update-container .btn-submit {
+    background: #ff7c85;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .about-team-update-container .btn-submit:hover {
+    background: #ff5a6a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 124, 133, 0.35);
+  }
+  /* ================= Image Section ================= */
+.image-section {
+    margin-bottom: 30px;
+  }
+  
+  .image-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== Preview Block ===== */
+  .image-preview-block {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px dashed #ff7c85;
+    background: linear-gradient(135deg, #fff5f6, #ffe9eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .image-preview-block:hover {
+    box-shadow: 0 10px 25px rgba(255, 124, 133, 0.25);
+    transform: translateY(-3px);
+  }
+  
+  /* ===== Preview Image ===== */
+  .preview-img {
+    width: 100%;
+    height: 100%;
+    transition: 0.4s ease;
+  }
+  
+  .image-preview-block:hover .preview-img {
+    transform: scale(1.08);
+  }
+  
+  /* ===== Placeholder ===== */
+  .placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 124, 133, 0.08);
+    color: #ff7c85;
+    border: 1px dashed #ffc1c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* ===== Overlay Actions ===== */
+  .image-actions {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  
+  .image-preview-block:hover .image-actions {
+    opacity: 1;
+  }
+  
+  /* ===== Buttons ===== */
+  .image-actions .btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+    background: #ffffff;
+    color: #ff3f57;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-actions .btn:hover {
+    background: #ff7c85;
+    color: #fff;
+  }
+  
+  .btn-remove {
+    background: #ef4444 !important;
+    color: #fff !important;
+  }
+  
+  .btn-remove:hover {
+    background: #b91c1c !important;
+    transform: translateY(-2px);
+  }
+  

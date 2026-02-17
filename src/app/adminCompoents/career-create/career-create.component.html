@@ -1,0 +1,72 @@
+<div class="career-update-container">
+    <h2>Create Career</h2>
+  
+    <form [formGroup]="careerForm" (ngSubmit)="onSubmit()">
+  
+      <!-- ================= Image Upload ================= -->
+      <div class="image-section">
+        <label>Career Image</label>
+        <div class="image-preview-block">
+          <ng-container *ngIf="newImagePreview; else placeholder">
+            <img [src]="newImagePreview" class="preview-img" alt="New Career Image">
+          </ng-container>
+          <ng-template #placeholder>
+            <div class="placeholder-img">No image selected</div>
+          </ng-template>
+        </div>
+  
+        <div class="image-actions">
+          <input type="file" #fileInput (change)="onFileSelected($event)" />
+          <button type="button" class="btn btn-remove" *ngIf="newImagePreview" (click)="removeNewImage()">Remove</button>
+        </div>
+      </div>
+  
+      <!-- ================= Language Tabs ================= -->
+      <div class="lang-tabs">
+        <button type="button"
+                *ngFor="let lang of languages"
+                [class.active]="selectedLang === lang"
+                (click)="selectedLang = lang">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+      
+  
+      <!-- ================= Career Fields ================= -->
+      <div formArrayName="careerCardTranslations">
+        <div *ngFor="let group of careerCardTranslations.controls; let i = index" [formGroupName]="i"
+             [hidden]="group.get('language')?.value !== selectedLang" class="translation-card">
+  
+          <label>Job Title</label>
+          <input type="text" formControlName="jobTitle" placeholder="Job Title">
+  
+          <label>Employment Type</label>
+          <input type="text" formControlName="employmentType" placeholder="Full-time / Part-time">
+  
+          <div class="salary-group">
+            <div class="salary-input">
+              <label>Salary From</label>
+              <input type="number" formControlName="salaryFrom">
+            </div>
+            <div class="salary-input">
+              <label>Salary To</label>
+              <input type="number" formControlName="salaryTo">
+            </div>
+            <div class="salary-input">
+              <label>Salary Period</label>
+              <input type="text" formControlName="salaryPeriod">
+            </div>
+          </div>
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Job description"></textarea>
+        </div>
+      </div>
+  
+      <!-- ================= Submit ================= -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit">Create Career</button>
+      </div>
+    </form>
+  </div>
+  

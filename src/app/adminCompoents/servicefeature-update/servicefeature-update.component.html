@@ -1,0 +1,66 @@
+<div class="service-feature-update-container">
+    <h2>Update Service Feature</h2>
+  
+    <!-- ========================= -->
+    <!-- Image Section -->
+    <!-- ========================= -->
+    <div class="image-section">
+      <label>Cover Image</label>
+      <div class="image-preview-block">
+        <img *ngIf="imagePreview; else placeholder" [src]="imagePreview" alt="Service Feature Cover" class="preview-img">
+        <ng-template #placeholder>
+          <div class="placeholder-img">No Image Selected</div>
+        </ng-template>
+        <div class="image-actions">
+          <button type="button" class="btn" (click)="fileInput.click()">Choose Image</button>
+          <button type="button" class="btn btn-remove" *ngIf="imagePreview" (click)="removeImage()">Remove</button>
+        </div>
+        <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+      </div>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Language Tabs -->
+    <!-- ========================= -->
+    <div class="lang-tabs">
+      <button *ngFor="let lang of languages"
+              type="button"
+              [class.active]="selectedLang === lang"
+              (click)="selectedLang = lang">
+        {{ lang.toUpperCase() }}
+      </button>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Translation Form -->
+    <!-- ========================= -->
+    <form [formGroup]="serviceFeatureForm" (ngSubmit)="onSubmit()">
+      <div class="translation-form" *ngFor="let lang of languages" [hidden]="selectedLang !== lang">
+        <div [formGroup]="getTranslationGroup(lang)">
+          <label>Title</label>
+          <input type="text" formControlName="title" placeholder="Service Feature Title">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Service Feature Description..." rows="4"></textarea>
+  
+          <div class="includes-group">
+            <div class="include-item">
+              <label>Include First</label>
+              <input type="text" formControlName="includeFirst" placeholder="e.g., 24/7 Support">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Second</label>
+              <input type="text" formControlName="includeSecond" placeholder="e.g., Free Consultation">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="serviceFeatureForm.invalid">
+          Update Service Feature
+        </button>
+      </div>
+    </form>
+  </div>

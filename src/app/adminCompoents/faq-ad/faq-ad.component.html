@@ -1,0 +1,75 @@
+<section class="dashboard-section container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="section-header">
+    <h2 class="section-title">FAQ Management</h2>
+
+    <div class="add-tour-wrapper">
+      <button class="add-tour-btn" routerLink="/admin/faq-create">
+        <i class="fa-solid fa-plus"></i>
+        Create FAQ
+      </button>
+    </div>
+    
+  </div>
+
+  <!-- ===== TABLE ===== -->
+  <div class="tour-list">
+
+    <!-- Header Row -->
+    <div class="tour-row header">
+      <div class="tour-col id">ID</div>
+      <div class="tour-col question">Question</div>
+      <div class="tour-col answer">Answer</div>
+      <div class="tour-col language">Language</div>
+      <div class="tour-col actions">Actions</div>
+    </div>
+
+    <!-- Data Rows -->
+    @for (faq of Data(); track faq.id) {
+      <div class="tour-row">
+
+        <!-- ID -->
+        <div class="tour-col id">
+          #{{ faq.id }}
+        </div>
+
+        <!-- Question -->
+        <div class="tour-col question">
+          {{ faq.fAQsTranslationDTos[0]?.question }}
+        </div>
+
+        <!-- Answer -->
+        <div class="tour-col answer">
+          {{ faq.fAQsTranslationDTos[0]?.answer }}
+        </div>
+
+        <!-- Language -->
+        <div class="tour-col language">
+          {{ faq.fAQsTranslationDTos[0]?.language }}
+        </div>
+
+        <!-- Actions -->
+        <div class="tour-col actions">
+
+          <!-- Edit -->
+          <button 
+            class="btn edit-btn"
+            [routerLink]="['/admin/faq-update', faq.id]">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+
+          <!-- Delete -->
+          <button 
+            class="btn delete-btn"
+            (click)="deleteFaq(faq.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+
+        </div>
+
+      </div>
+    }
+
+  </div>
+</section>

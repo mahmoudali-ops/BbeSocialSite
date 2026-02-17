@@ -15,7 +15,7 @@ import { TranslatedPipe } from '../../core/pipes/translate.pipe';
   styleUrl: './faq.component.css'
 })
 export class FaqComponent  extends ReloadableComponent   {
-  faqData: WritableSignal<IFaq | null> = signal(null);
+  faqData: WritableSignal<IFaq[]|null> = signal([]);
   faqSUbs: WritableSignal<Subscription | null> = signal(null);
 
 private readonly faqService = inject(FaqService);

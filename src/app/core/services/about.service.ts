@@ -12,4 +12,16 @@ export class AboutService {
   getAboutData():Observable<any>{
     return this.httpClient.get(`${environment.BaseUrl}/api/About/GetAbout`);
   }
+
+  getAllAboutData():Observable<any>{
+    return this.httpClient.get(`${environment.BaseUrl}/api/About/GetAll`);
+  }
+
+  updateCareer(data:FormData):Observable<any>{
+    return this.httpClient.put(`${environment.BaseUrl}/api/About/update`,data);
+  }
+  
+
+
+
 }

@@ -5,28 +5,27 @@
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-      <div class="row gy-4 align-items-center">
+      <!-- هنا بنتأكد إن فيه عنصر أول قبل ما نعرض البيانات -->
+      <div class="row gy-4 align-items-center" *ngIf="HomeData()as home">
         <div class="col-lg-6 order-2 order-lg-1">
           <div class="hero-content">
         
             <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
               {{ 'HERO.TITLE_PART1' | t }}
               <span class="highlight">
-                {{ 'HERO.TITLE_HIGHLIGHT' | t }}
+                {{ home.homeTranslationDtos[0]?.title }}
               </span>
             </h1>
             
-            
             <h2 data-aos="fade-up" data-aos-delay="300">
               {{ 'HERO.SUBTITLE' | t }}
-              
             </h2>
         
             <p data-aos="fade-up" data-aos-delay="400">
-              {{ 'HERO.DESCRIPTION' | t }}
+              {{ home.homeTranslationDtos[0]?.description }}
             </p>
         
-            <div  data-aos="fade-up" data-aos-delay="500">
+            <div data-aos="fade-up" data-aos-delay="500">
               <a routerLink="/about" class="btn btn-primary">
                 {{ 'HERO.CTA_PRIMARY' | t }}
               </a>
@@ -41,7 +40,7 @@
         <div class="col-lg-6 order-1 order-lg-2">
           <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
             <div class="image-wrapper">
-              <img src="assets/images/Bibi.png" alt="Sarah Mitchell" class="img-fluid">
+              <img [src]="home.mainCover" alt="Sarah Mitchell" class="img-fluid">
               <div class="floating-elements">
                 <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
                   <i class="bi bi-palette"></i>
@@ -67,8 +66,9 @@
 
 </main>
 
+
 <section class="experience-section">
-  <div class="container">
+  <div class="container"*ngIf="HomeData()as home">
     <div class="row align-items-center">
 
       <!-- Left -->
@@ -108,7 +108,7 @@
 
       <!-- Right -->
       <div class="col-lg-6 experience-image">
-        <img src="../../../assets/images/team.webp" alt="BBE Social Team" />
+        <img [src]="home.teamImage" alt="BBE Social Team" />
       </div>
 
     </div>
@@ -149,12 +149,12 @@
 
 
 
-<section class="bbe-multi-lang">
+<section class="bbe-multi-lang"*ngIf="HomeData()as home">
   <div class="bbe-multi-container">
 
     <!-- Image -->
     <div class="bbe-multi-image">
-      <img src="../../../assets/images/gehad.webp" alt="Support Team">
+      <img [src]="home.multiLangImage" alt="Support Team">
     </div>
 
     <!-- Content -->
@@ -260,7 +260,7 @@
 </section>
 
 
-<section id="hero" class="hero-section">
+<section id="hero" class="hero-section"*ngIf="HomeData()as home">
   <div class="hero-container">
     <!-- Left Text -->
     <div class="hero-text">
@@ -273,7 +273,7 @@
 
     <!-- Right Image -->
     <div class="hero-image">
-      <img src="assets/images/helpimage.png" alt="Customer Service">
+      <img [src]="home.helpImage" alt="Customer Service">
     </div>
   </div>
 </section>

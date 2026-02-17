@@ -1,0 +1,66 @@
+<div class="service-core-create-container">
+    <h2>Create Service Core</h2>
+  
+    <form [formGroup]="serviceCoreForm" (ngSubmit)="onSubmit()">
+  
+      <!-- ================= Image Upload ================= -->
+      <div class="image-section">
+        <label>Service Core Image</label>
+        <div class="image-preview-block">
+          <ng-container *ngIf="newImagePreview; else placeholder">
+            <img [src]="newImagePreview" class="preview-img" alt="New Service Core Image">
+          </ng-container>
+          <ng-template #placeholder>
+            <div class="placeholder-img">No image selected</div>
+          </ng-template>
+        </div>
+  
+        <div class="image-actions">
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" />
+          <button type="button" class="btn btn-remove" *ngIf="newImagePreview" (click)="removeNewImage()">Remove</button>
+        </div>
+      </div>
+  
+      <!-- ================= Language Tabs ================= -->
+      <div class="lang-tabs">
+        <button type="button"
+                *ngFor="let lang of languages"
+                [class.active]="selectedLang === lang"
+                (click)="selectedLang = lang">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+  
+      <!-- ================= Service Core Fields ================= -->
+      <div formArrayName="serviceCoreTranlationDtos">
+        <div *ngFor="let group of serviceCoreTranlationDtos.controls; let i = index" 
+             [formGroupName]="i"
+             [hidden]="group.get('language')?.value !== selectedLang" 
+             class="translation-card">
+  
+          <label>Title</label>
+          <input type="text" formControlName="title" placeholder="Service Core Title">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Service Core Description" rows="6"></textarea>
+        </div>
+      </div>
+  
+      <!-- ================= Validation Errors Summary ================= -->
+      <div class="error-summary" *ngIf="formErrors.length > 0">
+        <h4>Please fix these errors:</h4>
+        <ul>
+          <li *ngFor="let error of formErrors">
+            {{ error.label }} ({{ error.lang }})
+          </li>
+        </ul>
+      </div>
+  
+      <!-- ================= Submit ================= -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="serviceCoreForm.invalid">
+          Create Service Core
+        </button>
+      </div>
+    </form>
+  </div>

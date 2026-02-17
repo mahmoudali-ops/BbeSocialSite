@@ -12,4 +12,23 @@ private readonly httpClient=inject(HttpClient);
 
   getContactData():Observable<any>{
     return this.httpClient.get(`${environment.BaseUrl}/api/ServiceCore`);
-  }}
+  }
+
+  createServiceCore(data:FormData):Observable<any>{
+    return this.httpClient.post(`${environment.BaseUrl}/api/ServiceCore`,data);
+  }
+  updateServiceCore(id:number,data:FormData):Observable<any>{
+    return this.httpClient.put(`${environment.BaseUrl}/api/ServiceCore/update/${id}`,data);
+  }
+  
+  getAllDetaildedServiceCore(id:number|null):Observable<any>{
+    return this.httpClient.get(`${environment.BaseUrl}/api/ServiceCore/GetAll/${id}`);
+  }
+
+  deleteServiceCore(id:number):Observable<any>{
+    return this.httpClient.delete(`${environment.BaseUrl}/api/ServiceCore/delete/${id}`);
+  }
+
+
+
+}

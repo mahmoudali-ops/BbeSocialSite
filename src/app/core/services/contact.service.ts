@@ -13,4 +13,13 @@ export class ContactService {
   getContactData():Observable<any>{
     return this.httpClient.get(`${environment.BaseUrl}/api/Contact/getcontact`);
   }
+
+  getAllContactData():Observable<any>{
+    return this.httpClient.get(`${environment.BaseUrl}/api/Contact/GetAll`);
+  }
+
+  updateContact(data:FormData):Observable<any>{
+    return this.httpClient.put(`${environment.BaseUrl}/api/Contact/update`,data);
+  }
+
   }

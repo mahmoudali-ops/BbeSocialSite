@@ -1,0 +1,103 @@
+<div class="home-update-container">
+    <form [formGroup]="homeForm" (ngSubmit)="onSubmit()" class="home-form">
+  
+      <!-- Images Section -->
+      <div class="image-section">
+
+        <!-- Main Cover -->
+        <div class="image-preview-block">
+          <label>Main Cover Image</label>
+          <div class="image-wrapper">
+            <img *ngIf="newMainCoverPreview; else oldMainCover" [src]="newMainCoverPreview" alt="New Main Cover">
+            <ng-template #oldMainCover>
+              <img *ngIf="currentMainCoverImage" [src]="currentMainCoverImage" alt="Current Main Cover">
+            </ng-template>
+          </div>
+          <label class="custom-file-upload">
+            <input type="file" #mainCoverInput (change)="onFileSelected($event,'mainCover')">
+            Upload New Image
+          </label>
+          <button *ngIf="newMainCoverPreview" type="button" (click)="removeNewImage('mainCover')">Remove New Image</button>
+        </div>
+      
+        <!-- Multi-Language Image -->
+        <div class="image-preview-block">
+          <label>Multi-Language Image</label>
+          <div class="image-wrapper">
+            <img *ngIf="newMultiLangPreview; else oldMultiLang" [src]="newMultiLangPreview" alt="New MultiLang">
+            <ng-template #oldMultiLang>
+              <img *ngIf="currentMultiLangImage" [src]="currentMultiLangImage" alt="Current MultiLang">
+            </ng-template>
+          </div>
+          <label class="custom-file-upload">
+            <input type="file" #multiLangInput (change)="onFileSelected($event,'multiLang')">
+            Upload New Image
+          </label>
+          <button *ngIf="newMultiLangPreview" type="button" (click)="removeNewImage('multiLang')">Remove New Image</button>
+        </div>
+      
+        <!-- Team Image -->
+        <div class="image-preview-block">
+          <label>Team Image</label>
+          <div class="image-wrapper">
+            <img *ngIf="newTeamPreview; else oldTeam" [src]="newTeamPreview" alt="New Team">
+            <ng-template #oldTeam>
+              <img *ngIf="currentTeamImage" [src]="currentTeamImage" alt="Current Team">
+            </ng-template>
+          </div>
+          <label class="custom-file-upload">
+            <input type="file" #teamInput (change)="onFileSelected($event,'team')">
+            Upload New Image
+          </label>
+          <button *ngIf="newTeamPreview" type="button" (click)="removeNewImage('team')">Remove New Image</button>
+        </div>
+      
+        <!-- Help Image -->
+        <div class="image-preview-block">
+          <label>Help Image</label>
+          <div class="image-wrapper">
+            <img *ngIf="newHelpPreview; else oldHelp" [src]="newHelpPreview" alt="New Help">
+            <ng-template #oldHelp>
+              <img *ngIf="currentHelpImage" [src]="currentHelpImage" alt="Current Help">
+            </ng-template>
+          </div>
+          <label class="custom-file-upload">
+            <input type="file" #helpInput (change)="onFileSelected($event,'help')">
+            Upload New Image
+          </label>
+          <button *ngIf="newHelpPreview" type="button" (click)="removeNewImage('help')">Remove New Image</button>
+        </div>
+      
+      </div>
+      
+  
+      <!-- Language Tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let lang of languages">
+          <a href="#"
+             class="nav-link"
+             [class.active]="selectedLang === lang"
+             (click)="selectedLang = lang; $event.preventDefault()">
+            {{ lang.toUpperCase() }}
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div [formGroup]="getTranslationGroup(selectedLang)">
+          <div class="form-group">
+            <label>Title ({{ selectedLang.toUpperCase() }})</label>
+            <input type="text" formControlName="title">
+          </div>
+          <div class="form-group">
+            <label>Description ({{ selectedLang.toUpperCase() }})</label>
+            <textarea formControlName="description"></textarea>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit">Update Home</button>
+    </form>
+  </div>
+  

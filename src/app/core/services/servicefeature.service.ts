@@ -12,4 +12,24 @@ export class ServicefeatureService {
 
   getContactData():Observable<any>{
     return this.httpClient.get(`${environment.BaseUrl}/api/ServiceFeature`);
-  }}
+  }
+
+  createServiceFeature(data:FormData):Observable<any>{
+    return this.httpClient.post(`${environment.BaseUrl}/api/ServiceFeature`,data);
+  }
+  updateServiceFeature(id:number,data:FormData):Observable<any>{
+    return this.httpClient.put(`${environment.BaseUrl}/api/ServiceFeature/update/${id}`,data);
+  }
+  
+  getAllDetaildedServiceFeature(id:number|null):Observable<any>{
+    return this.httpClient.get(`${environment.BaseUrl}/api/ServiceFeature/GetAll/${id}`);
+  }
+
+  deleteServiceFeature(id:number):Observable<any>{
+    return this.httpClient.delete(`${environment.BaseUrl}/api/ServiceFeature/delete/${id}`);
+  }
+
+
+
+
+}

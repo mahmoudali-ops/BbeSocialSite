@@ -1,0 +1,78 @@
+<section class="dashboard-section container">
+    <h2 class="section-title">All Service Core</h2>
+  
+    <!-- Add Button -->
+    <div class="add-tour-wrapper">
+      <button 
+        class="btn add-tour-btn" 
+        [routerLink]="['/admin/servicecore-create']">
+        <i class="fa-solid fa-plus"></i>
+        Add New Core
+      </button>
+    </div>
+  
+    <!-- Core List -->
+    <div class="tour-list">
+  
+      <!-- Table Header -->
+      <div class="tour-row header">
+        <div class="tour-col id">ID</div>
+        <div class="tour-col image">Image</div>
+        <div class="tour-col title">Title</div>
+        <div class="tour-col description">Description</div>
+        <div class="tour-col actions">Actions</div>
+      </div>
+  
+      @for (core of Data(); track core.id) {
+      <div class="tour-row">
+  
+        <!-- ID -->
+        <div class="tour-col id">
+          <span>#{{ core.id }}</span>
+        </div>
+  
+        <!-- Image -->
+        <div class="tour-col image">
+          <img 
+            [src]="core.imageCover" 
+            alt="core image"
+            class="feature-img">
+        </div>
+  
+        <!-- Title -->
+        <div class="tour-col title">
+          <h3>
+            {{ core.serviceCoreTranlationDtos[0]?.title }}
+          </h3>
+        </div>
+  
+        <!-- Description -->
+        <div class="tour-col description">
+          <p class="feature-desc">
+            {{ core.serviceCoreTranlationDtos[0]?.description }}
+          </p>
+        </div>
+  
+        <!-- Actions -->
+        <div class="tour-col actions">
+          <button 
+            class="btn edit-btn"
+            title="Edit"
+            [routerLink]="['/admin/servicecore-update', core.id]">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+  
+          <button 
+            class="btn delete-btn"
+            title="Delete"
+            (click)="delete(core.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+  
+      </div>
+      }
+  
+    </div>
+  </section>
+  

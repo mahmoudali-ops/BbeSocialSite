@@ -15,4 +15,22 @@ export class FaqService {
   }
 
 
+  updateFaq(id:number,data:FormData):Observable<any>{
+    return this.httpClient.put(`${environment.BaseUrl}/api/FAQ/update/${id}`,data);
+  }
+  
+  getAllFaq(id:number|null):Observable<any>{
+    return this.httpClient.get(`${environment.BaseUrl}/api/FAQ/GetAll/${id}`);
+  }
+
+  createFaq(data:FormData):Observable<any>{
+    return this.httpClient.post(`${environment.BaseUrl}/api/FAQ`,data);
+  }
+
+
+  deleteFaq(id:number):Observable<any>{
+    return this.httpClient.delete(`${environment.BaseUrl}/api/FAQ/delete/${id}`);
+  }
+
+
 }

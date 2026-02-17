@@ -1,0 +1,86 @@
+<section class="dashboard-section container">
+    <h2 class="section-title">All Team Members</h2>
+  
+    <!-- Add Button -->
+    <div class="add-tour-wrapper">
+      <button 
+        class="btn add-tour-btn" 
+        [routerLink]="['/admin/aboutteam-create']">
+        <i class="fa-solid fa-plus"></i>
+        Add New Member
+      </button>
+    </div>
+  
+    <!-- Team List -->
+    <div class="tour-list">
+  
+      <!-- Table Header -->
+      <div class="tour-row header">
+        <div class="tour-col id">ID</div>
+        <div class="tour-col image">Photo</div>
+        <div class="tour-col name">Name</div>
+        <div class="tour-col position">Position</div>
+        <div class="tour-col description">Description</div>
+        <div class="tour-col actions">Actions</div>
+      </div>
+  
+      @for (member of Data(); track member.id) {
+      <div class="tour-row">
+  
+        <!-- ID -->
+        <div class="tour-col id">
+          <span>#{{ member.id }}</span>
+        </div>
+  
+        <!-- Image -->
+        <div class="tour-col image">
+          <img 
+            [src]="member.imageCover" 
+            alt="team member"
+            class="team-img">
+        </div>
+  
+        <!-- Name -->
+        <div class="tour-col name">
+          <h3>
+            {{ member.aboutTeamTranlationDtos[0]?.name }}
+          </h3>
+        </div>
+  
+        <!-- Position -->
+        <div class="tour-col position">
+          <span class="position-badge">
+            {{ member.aboutTeamTranlationDtos[0]?.position }}
+          </span>
+        </div>
+  
+        <!-- Description -->
+        <div class="tour-col description">
+          <p class="member-desc">
+            {{ member.aboutTeamTranlationDtos[0]?.description }}
+          </p>
+        </div>
+  
+        <!-- Actions -->
+        <div class="tour-col actions">
+          <button 
+            class="btn edit-btn"
+            title="Edit"
+            [routerLink]="['/admin/aboutteam-update', member.id]">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+  
+          <button 
+            class="btn delete-btn"
+            title="Delete"
+            (click)="delete(member.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+  
+      </div>
+      }
+  
+    </div>
+  </section>
+  

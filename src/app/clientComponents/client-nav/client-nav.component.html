@@ -5,7 +5,9 @@
     <div class="container nav-container">
       <!-- الشعار -->
       <a class="logo" routerLink="/">
-        <img src="assets/images/bbesocaiallogo.png" alt="Logo" />
+        <img [src]="socailelemnts.logo()" alt="Logo" />
+
+        
       </a>
   
       <!-- القائمة في الوسط -->
@@ -72,13 +74,13 @@
       
       <!-- Social Icons على اليمين s-->
       <div class="social-icons">
-        <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr" class="social-icon" data-name="facebook">
+        <a [href]="socailelemnts.facebookUrl()" class="social-icon" data-name="facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
    
-        <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr"><i class="fab fa-tiktok"></i></a>
+        <a [href]="socailelemnts.instagramUrl()"><i class="fab fa-tiktok"></i></a>
 
-        <a href="https://www.instagram.com/bbe.social?igsh=OTF2dmN5c3NneXNr" class="social-icon" data-name="instagram">
+        <a  [href]="socailelemnts.instagramUrl()" class="social-icon" data-name="instagram">
           <i class="fab fa-instagram"></i>
         </a>
       </div>
@@ -105,7 +107,7 @@
 <div class="offcanvas-menu" [class.active]="isOffcanvasOpen">
   <div class="offcanvas-header">
     <a class="logo" routerLink="/" (click)="closeOffcanvas()">
-      <img src="../../../assets/images/bbesocaiallogo.png" alt="Logo" />
+      <img [src]="socailelemnts.logo()" alt="Logo" />
     </a>
     <button class="close-btn" (click)="closeOffcanvas()">&times;</button>
   </div>
@@ -123,10 +125,10 @@
 
   <!-- Social Icons in Offcanvas -->
   <div class="offcanvas-social">
-    <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr"><i class="fab fa-tiktok"></i></a>
+    <a [href]="socailelemnts.facebookUrl()"><i class="fab fa-facebook-f"></i></a>
+    <a [href]="socailelemnts.instagramUrl()"><i class="fab fa-tiktok"></i></a>
 
-    <a href="https://www.instagram.com/bbe.social?igsh=OTF2dmN5c3NneXNr" class="social-icon" data-name="instagram">
+    <a [href]="socailelemnts.instagramUrl()" class="social-icon" data-name="instagram">
       <i class="fab fa-instagram"></i>
     </a>
   </div>

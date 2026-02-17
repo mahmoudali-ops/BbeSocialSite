@@ -1,0 +1,78 @@
+<div class="service-feature-create-container">
+    <h2>Create Service Feature</h2>
+  
+    <form [formGroup]="serviceFeatureForm" (ngSubmit)="onSubmit()">
+  
+      <!-- ================= Image Upload ================= -->
+      <div class="image-section">
+        <label>Service Feature Image</label>
+        <div class="image-preview-block">
+          <ng-container *ngIf="newImagePreview; else placeholder">
+            <img [src]="newImagePreview" class="preview-img" alt="New Service Feature Image">
+          </ng-container>
+          <ng-template #placeholder>
+            <div class="placeholder-img">No image selected</div>
+          </ng-template>
+        </div>
+  
+        <div class="image-actions">
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" />
+          <button type="button" class="btn btn-remove" *ngIf="newImagePreview" (click)="removeNewImage()">Remove</button>
+        </div>
+      </div>
+  
+      <!-- ================= Language Tabs ================= -->
+      <div class="lang-tabs">
+        <button type="button"
+                *ngFor="let lang of languages"
+                [class.active]="selectedLang === lang"
+                (click)="selectedLang = lang">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+  
+      <!-- ================= Service Feature Fields ================= -->
+      <div formArrayName="servicesFeatureTranslationDtos">
+        <div *ngFor="let group of servicesFeatureTranslationDtos.controls; let i = index" 
+             [formGroupName]="i"
+             [hidden]="group.get('language')?.value !== selectedLang" 
+             class="translation-card">
+  
+          <label>Title</label>
+          <input type="text" formControlName="title" placeholder="Service Feature Title">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Service Feature Description" rows="4"></textarea>
+  
+          <div class="includes-group">
+            <div class="include-item">
+              <label>Include First</label>
+              <input type="text" formControlName="includeFirst" placeholder="e.g., 24/7 Support">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Second</label>
+              <input type="text" formControlName="includeSecond" placeholder="e.g., Free Consultation">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- ================= Validation Errors Summary ================= -->
+      <div class="error-summary" *ngIf="formErrors.length > 0">
+        <h4>Please fix these errors:</h4>
+        <ul>
+          <li *ngFor="let error of formErrors">
+            {{ error.label }} ({{ error.lang }})
+          </li>
+        </ul>
+      </div>
+  
+      <!-- ================= Submit ================= -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="serviceFeatureForm.invalid">
+          Create Service Feature
+        </button>
+      </div>
+    </form>
+  </div>

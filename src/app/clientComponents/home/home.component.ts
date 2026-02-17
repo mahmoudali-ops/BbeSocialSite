@@ -1,3 +1,4 @@
+import { HomeService } from './../../core/services/home.service';
 import {  ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, Inject, inject, OnDestroy, OnInit, PLATFORM_ID, signal, ViewChild, WritableSignal } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { Router, RouterLink } from "@angular/router";
@@ -14,6 +15,7 @@ import { BrandiamgesService } from '../../core/services/brandiamges.service';
 import { IBrandImage } from '../../core/interfaces/ibrandimage';
 import { PriceService } from '../../core/services/price.service';
 import { IPrice } from '../../core/interfaces/iprice';
+import { IHome } from '../../core/interfaces/ihome';
 
 
 
@@ -68,16 +70,25 @@ export class HomeComponent  extends ReloadableComponent {
           private readonly priceService=inject(PriceService);
             AllPrices:WritableSignal<IPrice[]>=signal([]);  
             PricesSUbs:WritableSignal<Subscription|null>=signal(null);
+
+            
+          private readonly HomeService=inject(HomeService);
+          HomeData:WritableSignal<IHome|null>=signal(null);  
+          HomeSUbs:WritableSignal<Subscription|null>=signal(null);
   
   ngOnInit(): void {
    // this.LoadData();
    // this.onReload(() => this.LoadData());
-    this.LoadDataSeo();
 
+    this.LoadDataSeo();
+    this.LoadHomeData();
     this.loadBrandsImages();
     this.loadPrices();
+
     this.onReload(() => this.loadBrandsImages())
     this.onReload(() => this.loadPrices())
+    this.onReload(() => this.LoadHomeData())
+
 
     
 
@@ -216,11 +227,26 @@ testimonials: Testimonial[] = [
         }
 
         loadPrices() {
-          this.priceService.getAllDestnation()
+          this.priceService.getAllPrice()
           .pipe(takeUntil(this.destroy$))
           .subscribe({
             next: (res) => {
               this.AllPrices.set(res);
+           
+            },
+            error: (err: HttpErrorResponse) => {
+              console.log(err.message);
+            }
+          });
+        }
+
+        LoadHomeData() {
+          this.HomeService.getHomeData()
+          .pipe(takeUntil(this.destroy$))
+          .subscribe({
+            next: (res) => {
+              console.log('Home Data:', res);
+              this.HomeData.set(res);
            
             },
             error: (err: HttpErrorResponse) => {

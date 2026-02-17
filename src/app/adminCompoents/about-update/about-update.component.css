@@ -1,0 +1,291 @@
+/* ================= Container ================= */
+.about-update-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px 28px;
+  background: #fefefe; /* أفتح شويه */
+  border-radius: 18px; /* أنعم الحواف */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* ظل أخف وأكبر شويه */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* ================= Form Groups ================= */
+.about-form .form-group {
+  margin-bottom: 20px;
+}
+
+.about-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+/* ================= Inputs & Textarea ================= */
+.about-form input[type="text"],
+.about-form textarea,
+.about-form input[type="file"] {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.about-form input[type="text"]:focus,
+.about-form textarea:focus,
+.about-form input[type="file"]:focus {
+  border-color: #5a9bf6;
+  box-shadow: 0 0 10px rgba(90,155,246,0.2);
+}
+
+.about-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ================= Image Preview ================= */
+.image-preview-wrapper {
+  margin-top: 15px;
+}
+
+.preview-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-preview img {
+  display: block;
+  max-width: 220px;
+  max-height: 160px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-preview:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.image-preview .remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.image-preview .remove-btn:hover {
+  background: #e04444;
+  transform: scale(1.1);
+}
+
+/* ================= Tabs ================= */
+.nav-tabs {
+  border-bottom: 2px solid #eee;
+  margin-top: 30px;
+}
+
+.nav-tabs .nav-item {
+  margin-right: 6px;
+}
+
+.nav-tabs .nav-link {
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #eee;
+  border-bottom: none;
+  background: #f7f7f7;
+  color: #555;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  background: #fff;
+  border-color: #ddd #ddd #fff;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ================= Tab Content ================= */
+.tab-content {
+  border: 1px solid #eee;
+  border-top: none;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+}
+
+/* ================= Submit Button ================= */
+.about-form button[type="submit"] {
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 14px;
+  background-color: #5a9bf6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about-form button[type="submit"]:hover {
+  background-color: #da7400;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,123,255,0.25);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 576px) {
+  .about-update-container {
+    padding: 20px 16px;
+  }
+  .image-preview img {
+    max-width: 100%;
+    height: auto;
+  }
+  .nav-tabs .nav-link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+/* ================= File Upload Group ================= */
+.file-upload-group {
+  margin-bottom: 20px;
+}
+
+.custom-file-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-file-input:hover {
+  border-color: #5a9bf6;
+  box-shadow: 0 0 8px rgba(90,155,246,0.2);
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-text {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #555;
+  pointer-events: none;
+}
+
+.file-btn {
+  background-color: #5a9bf6;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.file-btn:hover {
+  background-color: #437cd8;
+  transform: translateY(-1px);
+}
+
+/* ================= Image Preview (same as before) ================= */
+.image-preview-wrapper {
+  margin-top: 15px;
+}
+
+.preview-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-preview img {
+  display: block;
+  max-width: 220px;
+  max-height: 160px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-preview:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.image-preview .remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.image-preview .remove-btn:hover {
+  background: #e04444;
+  transform: scale(1.1);
+}

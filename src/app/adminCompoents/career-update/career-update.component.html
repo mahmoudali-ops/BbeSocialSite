@@ -1,0 +1,67 @@
+<div class="career-update-container">
+    <h2>Update Career</h2>
+  
+    <!-- ========================= -->
+    <!-- Image Section -->
+    <!-- ========================= -->
+    <div class="image-section">
+      <label>Cover Image</label>
+      <div class="image-preview-block">
+        <img *ngIf="imagePreview; else placeholder" [src]="imagePreview" alt="Career Cover" class="preview-img">
+        <ng-template #placeholder>
+          <div class="placeholder-img">No Image Selected</div>
+        </ng-template>
+        <div class="image-actions">
+          <button type="button" class="btn" (click)="fileInput.click()">Choose Image</button>
+          <button type="button" class="btn btn-remove" *ngIf="imagePreview" (click)="removeImage()">Remove</button>
+        </div>
+        <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+      </div>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Language Tabs -->
+    <!-- ========================= -->
+    <div class="lang-tabs">
+      <button *ngFor="let lang of languages"
+              type="button"
+              [class.active]="selectedLang === lang"
+              (click)="selectedLang = lang">
+        {{ lang.toUpperCase() }}
+      </button>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Translation Form -->
+    <!-- ========================= -->
+    <form [formGroup]="careerForm" (ngSubmit)="onSubmit()">
+      <div class="translation-form" *ngFor="let lang of languages" [hidden]="selectedLang !== lang">
+        <div [formGroup]="getTranslationGroup(lang)">
+          <label>Job Title</label>
+          <input type="text" formControlName="jobTitle" placeholder="Job Title">
+  
+          <label>Employment Type</label>
+          <input type="text" formControlName="employmentType" placeholder="Full Time / Part Time">
+  
+          <div class="salary-group">
+            <label>Salary From</label>
+            <input type="number" formControlName="salaryFrom" placeholder="700">
+  
+            <label>Salary To</label>
+            <input type="number" formControlName="salaryTo" placeholder="1100">
+  
+            <label>Salary Period</label>
+            <input type="text" formControlName="salaryPeriod" placeholder="Per Month">
+          </div>
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Job description..." rows="6"></textarea>
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit">Update Career</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,102 @@
+<div class="price-create-container">
+    <h2>Create Price Plan</h2>
+  
+    <form [formGroup]="priceForm" (ngSubmit)="onSubmit()">
+  
+      <!-- ================= Image Upload ================= -->
+      <div class="image-section">
+        <label>Price Plan Image</label>
+        <div class="image-preview-block">
+          <ng-container *ngIf="newImagePreview; else placeholder">
+            <img [src]="newImagePreview" class="preview-img" alt="Price Plan Image">
+          </ng-container>
+          <ng-template #placeholder>
+            <div class="placeholder-img">No image selected</div>
+          </ng-template>
+        </div>
+  
+        <div class="image-actions">
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" />
+          <button type="button" class="btn btn-remove" *ngIf="newImagePreview" (click)="removeNewImage()">Remove</button>
+        </div>
+      </div>
+  
+      <!-- ================= Language Tabs ================= -->
+      <div class="lang-tabs">
+        <button type="button"
+                *ngFor="let lang of languages"
+                [class.active]="selectedLang === lang"
+                (click)="selectedLang = lang">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+  
+      <!-- ================= Price Fields ================= -->
+      <div formArrayName="priceTranlationDtos">
+        <div *ngFor="let group of priceTranlationDtos.controls; let i = index" 
+             [formGroupName]="i"
+             [hidden]="group.get('language')?.value !== selectedLang" 
+             class="translation-card">
+  
+          <div class="price-discount-group">
+            <div class="price-field">
+              <label>Price ($)</label>
+              <input type="number" formControlName="priceService" placeholder="0.00" step="0.01">
+            </div>
+  
+            <div class="discount-field">
+              <label>Discount (%)</label>
+              <input type="number" formControlName="discount" placeholder="0" min="0" max="100">
+            </div>
+          </div>
+  
+          <label>Title</label>
+          <input type="text" formControlName="title" placeholder="Plan Title" maxlength="250">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Plan Description" rows="3"></textarea>
+  
+          <div class="includes-section">
+            <h3>What's Included</h3>
+            
+            <div class="include-item">
+              <label>Include First</label>
+              <input type="text" formControlName="includeFirst" placeholder="e.g., 24/7 Support">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Second</label>
+              <input type="text" formControlName="includeSecond" placeholder="e.g., Free Consultation">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Third</label>
+              <input type="text" formControlName="includeThird" placeholder="e.g., Unlimited Projects">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Forth</label>
+              <input type="text" formControlName="includeForth" placeholder="e.g., Dedicated Manager">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- ================= Validation Errors Summary ================= -->
+      <div class="error-summary" *ngIf="formErrors.length > 0">
+        <h4>Please fix these errors:</h4>
+        <ul>
+          <li *ngFor="let error of formErrors">
+            {{ error.label }} ({{ error.lang }})
+          </li>
+        </ul>
+      </div>
+  
+      <!-- ================= Submit ================= -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="priceForm.invalid">
+          Create Price Plan
+        </button>
+      </div>
+    </form>
+  </div>

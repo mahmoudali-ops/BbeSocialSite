@@ -27,7 +27,7 @@ export class PricingComponent  extends ReloadableComponent   {
       this.onReload(() => this.LoadData())
       }
       LoadData() {
-        this.priceService.getAllDestnation()
+        this.priceService.getAllPrice()
         .pipe(takeUntil(this.destroy$))
         .subscribe({
           next: (res) => {

@@ -1,0 +1,41 @@
+<div class="faq-update-container">
+    <h2>Update FAQ</h2>
+  
+    <!-- ========================= -->
+    <!-- Image Section -->
+    <!-- ========================= -->
+
+  
+    <!-- ========================= -->
+    <!-- Language Tabs -->
+    <!-- ========================= -->
+    <div class="lang-tabs">
+      <button *ngFor="let lang of languages"
+              type="button"
+              [class.active]="selectedLang === lang"
+              (click)="selectedLang = lang">
+        {{ lang.toUpperCase() }}
+      </button>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Translation Form -->
+    <!-- ========================= -->
+    <form [formGroup]="faqForm" (ngSubmit)="onSubmit()">
+      <div class="translation-form" *ngFor="let lang of languages" [hidden]="selectedLang !== lang">
+        <div [formGroup]="getTranslationGroup(lang)">
+          <label>Question</label>
+          <input type="text" formControlName="question" placeholder="Enter your question">
+  
+          <label>Answer</label>
+          <textarea formControlName="answer" placeholder="Enter the answer..." rows="5"></textarea>
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="faqForm.invalid">
+          Update FAQ
+        </button>
+      </div>
+    </form>
+  </div>

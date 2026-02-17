@@ -4,6 +4,7 @@ import { LanguageService } from '../../core/services/language.service';
 import { TranslatedPipe } from '../../core/pipes/translate.pipe';
 import { TranslationService } from '../../core/services/translation.service';
 import e from 'express';
+import { SocailelemntsService } from '../../core/services/socailelemnts.service';
 
 @Component({
   selector: 'app-client-nav',
@@ -21,14 +22,17 @@ export class ClientNavComponent implements OnInit {
   private readonly render2=inject(RendererFactory2).createRenderer(null,null);
   private readonly platid=inject(PLATFORM_ID);
 
+  socailelemnts = inject(SocailelemntsService);
+
 
   constructor(
     private langService: LanguageService,
-    private translationService: TranslationService
+    private translationService: TranslationService,
   ) {}
 
   ngOnInit(): void {
     this.onWindowScroll();
+    
   }
 
   // Scroll

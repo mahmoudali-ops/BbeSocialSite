@@ -1,0 +1,82 @@
+<section class="dashboard-section container">
+    <h2 class="section-title">All Service Features</h2>
+  
+    <!-- Add Button -->
+    <div class="add-tour-wrapper">
+      <button 
+        class="btn add-tour-btn" 
+        [routerLink]="['/admin/servicefeature-create']">
+        <i class="fa-solid fa-plus"></i>
+        Add New Feature
+      </button>
+    </div>
+  
+    <!-- Feature List -->
+    <div class="tour-list">
+  
+      <!-- Table Header -->
+      <div class="tour-row header">
+        <div class="tour-col id">ID</div>
+        <div class="tour-col image">Image</div>
+        <div class="tour-col title">Title</div>
+        <div class="tour-col includes">Includes</div>
+        <div class="tour-col actions">Actions</div>
+      </div>
+  
+      @for (feature of Data(); track feature.id) {
+      <div class="tour-row">
+  
+        <!-- ID -->
+        <div class="tour-col id">
+          <span>#{{ feature.id }}</span>
+        </div>
+  
+        <!-- Image -->
+        <div class="tour-col image">
+          <img 
+            [src]="feature.imageCover" 
+            alt="feature image"
+            class="feature-img">
+        </div>
+  
+        <!-- Title -->
+        <div class="tour-col title">
+          <h3>
+            {{ feature.servicesFeatureTranslationDtos[0]?.title }}
+          </h3>
+          <p class="feature-desc">
+            {{ feature.servicesFeatureTranslationDtos[0]?.description }}
+          </p>
+        </div>
+  
+        <!-- Includes -->
+        <div class="tour-col includes">
+          <ul>
+            <li>{{ feature.servicesFeatureTranslationDtos[0]?.includeFirst }}</li>
+            <li>{{ feature.servicesFeatureTranslationDtos[0]?.includeSecond }}</li>
+          </ul>
+        </div>
+  
+        <!-- Actions -->
+        <div class="tour-col actions">
+          <button 
+            class="btn edit-btn"
+            title="Edit"
+            [routerLink]="['/admin/servicefeature-update', feature.id]">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+  
+          <button 
+            class="btn delete-btn"
+            title="Delete"
+            (click)="delete(feature.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+  
+      </div>
+      }
+  
+    </div>
+  </section>
+  

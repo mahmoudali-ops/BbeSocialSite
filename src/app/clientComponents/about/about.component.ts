@@ -6,9 +6,9 @@ import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { IAbout } from '../../core/interfaces/iabout';
 import { Subscription, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { IAboutTeam } from '../../core/interfaces/aboutteam';
 import { ReloadableComponent } from '../reloadable/reloadable.component';
 import { HttpErrorResponse } from '@angular/common/http';
+import { IAboutTeam } from '../../core/interfaces/iaboutteam';
 
 @Component({
   selector: 'app-about',

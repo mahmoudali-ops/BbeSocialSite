@@ -1,189 +1,208 @@
-/* ===========================================
-   MODERN GRADIENT ADMIN NAVBAR
-=========================================== */
-.admin-topnav {
-  width: 100%;
-  display: flex;
+/* ======================
+   TOP BAR
+====================== */
+.admin-topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 40px;
-  background: linear-gradient(135deg,rgb(32, 33, 30),rgb(129, 128, 14),rgb(32, 33, 30));
-  color: white;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-
+  padding: 14px 24px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 100;
 }
 
-/* ===== LEFT BRAND ===== */
-.topnav-left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo {
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 3px 10px rgba(255,255,255,0.3);
-}
-
-.brand {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-/* ===== CENTER LINKS ===== */
-.topnav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
+/* Logo */
+.topbar-logo {
+  height: 42px;
   border-radius: 10px;
-  color: #e0e7ff;
-  font-weight: 500;
-  font-size: 15px;
-  transition: 0.25s;
 }
 
-.nav-item a:hover {
-  background: rgba(255,255,255,0.22);
-  color: white;
-  transform: translateY(-2px);
+/* Center Title */
+.topbar-center h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fd7b7d;
+  letter-spacing: 0.5px;
 }
 
-.nav-item.active a {
-  background: rgba(255,255,255,0.32);
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 3px 8px rgba(255,255,255,0.25);
-}
-
-/* ===== RIGHT SECTION ===== */
-.topnav-right {
+/* Logout */
+.logout-btn {
   display: flex;
   align-items: center;
-}
-
-.logout-btn {
-  background: #9e3a2f;
+  gap: 8px;
+  background: #fd7b7d;
+  color: #fff;
   border: none;
   padding: 10px 16px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  color: white;
+  border-radius: 999px;
   font-size: 14px;
-  cursor: pointer;
-  border-radius: 10px;
   font-weight: 600;
-  transition: 0.25s;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn i {
+  font-size: 14px;
 }
 
 .logout-btn:hover {
-  background: rgba(249, 8, 8, 0.28);
+  background: #ff9a9c;
   transform: translateY(-2px);
 }
 
-/* ========= RESPONSIVE ========= */
-@media (max-width: 1000px) {
-  .admin-topnav {
-    flex-wrap: wrap;
-    text-align: center;
-    gap: 10px;
-    padding: 16px;
-  }
-
-  .topnav-links {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-@media (max-width: 600px) {
-  .brand {
-    font-size: 18px;
-  }
-
-  .nav-item a {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-
-  .logout-btn {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
+/* ======================
+   GRID NAV
+====================== */
+.admin-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 22px;
+  padding: 26px;
 }
 
-/* Base Dropdown Container */
-.nav-item.dropdown {
-  position: relative;
+.nav-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
 }
 
-/* Services Button */
-.nav-item.dropdown > .dropdown-toggle {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  transition: 0.3s ease;
+.nav-card i {
+  font-size: 34px;
+  margin-bottom: 14px;
+  color: #fd7b7d;
+}
+
+.nav-card p {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nav-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(253, 123, 125, 0.25);
+}
+
+/* Active */
+.active-card {
+  background: linear-gradient(135deg, #fd7b7d, #ff9a9c);
   color: #fff;
 }
 
-.nav-item.dropdown:hover > .dropdown-toggle {
-  color: #00e0ff;
+.active-card i {
+  color: #fff;
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-  position: absolute;
-  top: 48px;
-  left: 0;
-  background: #152b45;
-  padding: 10px 0;
-  width: 180px;
-  border-radius: 10px;
-  display: none;
-  flex-direction: column;
-  box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
-  z-index: 2000;
+/* Mobile */
+@media (max-width: 768px) {
+  .admin-topbar {
+    grid-template-columns: auto 1fr auto;
+    padding: 12px 16px;
+  }
+
+  .topbar-center h1 {
+    font-size: 18px;
+  }
+
+  .admin-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ======================
+   TOP BAR
+====================== */
+.admin-topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 16px 32px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Show Menu On Hover */
-.nav-item.dropdown:hover .dropdown-menu {
+/* 🔥 Logo أكبر */
+.topbar-logo {
+  height: 60px;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.topbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Title أقوى */
+.topbar-center h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fd7b7d, #ff9a9c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* ======================
+   LOGOUT BUTTON PREMIUM
+====================== */
+.logout-btn {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #fd7b7d, #ff9a9c);
+  box-shadow: 0 8px 20px rgba(253, 123, 125, 0.4);
+  transition: all 0.35s ease;
 }
 
-/* Dropdown Items */
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 18px;
-  color: #e3e6eb;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.25s ease;
+.logout-btn i {
+  font-size: 15px;
 }
 
-.dropdown-menu li a:hover,
-.dropdown-menu li a.active-link {
-  background: rgba(255,255,255,0.1);
-  color: #00eaff;
-  padding-left: 24px;
+/* Hover effect */
+.logout-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(253, 123, 125, 0.6);
+}
+
+/* Click effect */
+.logout-btn:active {
+  transform: scale(0.96);
+}
+
+/* ======================
+   MOBILE
+====================== */
+@media (max-width: 768px) {
+  .topbar-center h1 {
+    font-size: 22px;
+  }
+
+  .topbar-logo {
+    height: 45px;
+  }
+
+  .logout-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
 }

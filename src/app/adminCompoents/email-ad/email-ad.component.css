@@ -1,6 +1,6 @@
 .dashboard-section {
     padding: 2rem 1rem;
-    background: #f0f4f8;
+    background: #fcf1f1;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,7 +23,7 @@
   .tour-row.header {
     display: grid;
     grid-template-columns: 60px 1fr 1fr 1fr 180px 120px 120px;
-    background: linear-gradient(135deg,rgb(32, 33, 30),rgb(129, 128, 14),rgb(32, 33, 30));
+    background: #ff9a9c;
     color: #fff;
     font-weight: 700;
     border-radius: 10px;
@@ -334,7 +334,7 @@
 }
 
 .panel-header i {
-  color: #0077ff;
+  color: #ff9a9c;
   font-size: 18px;
 }
 
@@ -366,7 +366,7 @@
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 14px;
-  border-left: 3px solid #0077ff;
+  border-left: 3px solid #ff9a9c;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -384,7 +384,7 @@
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   margin-right: 4px;
-  color: #0077ff;
+  color: #ff9a9c;
 }
 
 .details-grid p:nth-child(1)::before { content: "\f007"; }
@@ -407,7 +407,7 @@
 
 .message-box strong {
   font-size: 14px;
-  color: #005fcc;
+  color: #ff9a9c;
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
@@ -457,7 +457,7 @@
 }
 
 .pagination-number.active-page {
-  background: linear-gradient(135deg,#007bff,#0356c7);
+  background: linear-gradient(135deg,#f89091,#f9abac);
   color: #fff;
   font-weight: bold;
   transform: scale(1.08);

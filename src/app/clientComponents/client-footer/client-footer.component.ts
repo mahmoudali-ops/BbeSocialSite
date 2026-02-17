@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslatedPipe } from '../../core/pipes/translate.pipe';
+import { SocailelemntsService } from '../../core/services/socailelemnts.service';
 
 @Component({
   selector: 'app-client-footer',
@@ -9,5 +10,8 @@ import { TranslatedPipe } from '../../core/pipes/translate.pipe';
   styleUrl: './client-footer.component.css'
 })
 export class ClientFooterComponent {
+
+    socailelemnts = inject(SocailelemntsService);
+  
 
 }

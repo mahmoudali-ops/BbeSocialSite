@@ -12,4 +12,15 @@ export class BrandiamgesService {
 
   getBrandsImageData():Observable<any>{
     return this.httpClient.get(`${environment.BaseUrl}/api/BrandImages`);
-  }}
+  }
+
+  AddImages(data:FormData):Observable<any>{
+    return this.httpClient.post(`${environment.BaseUrl}/api/BrandImages`,data);
+  }
+
+
+  deleteImage(id:number):Observable<any>{
+    return this.httpClient.delete(`${environment.BaseUrl}/api/BrandImages/delete/${id}`);
+  }
+
+}

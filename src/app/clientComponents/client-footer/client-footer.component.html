@@ -6,7 +6,7 @@
     <!-- Logo & Brand -->
     <div class="brand">
       <div class="logo-spin">
-        <img src="assets/images/bbesocaiallogo.png" alt="BbeSocial Logo">
+        <img [src]="socailelemnts.logo()" alt="BbeSocial Logo">
       </div>
 
       <h2 class="brand-name">
@@ -29,9 +29,9 @@
 
     <!-- Social Links -->
     <div class="social-box">
-      <a href="https://www.facebook.com/share/1AWpmnXHgB/?mibextid=wwXIfr" class="social"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/bbe.social?igsh=OTF2dmN5c3NneXNr" class="social"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="social"><i class="fab fa-tiktok"></i></a>
+      <a [href]="socailelemnts.facebookUrl()" class="social"><i class="bi bi-facebook"></i></a>
+      <a [href]="socailelemnts.instagramUrl()" class="social"><i class="bi bi-instagram"></i></a>
+      <a [href]="socailelemnts.instagramUrl()" class="social"><i class="fab fa-tiktok"></i></a>
     </div>
 
     <p class="copyright">

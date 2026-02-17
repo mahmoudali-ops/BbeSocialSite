@@ -1,0 +1,80 @@
+<div class="contact-update-container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+  
+      <!-- Reference Name -->
+      <div class="form-group">
+        <label>Reference Name</label>
+        <input type="text" formControlName="referenceName">
+      </div>
+  
+      <!-- Meta Description -->
+      <div class="form-group">
+        <label>Meta Description</label>
+        <input type="text" formControlName="metaDescription">
+      </div>
+  
+      <!-- Meta Keywords -->
+      <div class="form-group">
+        <label>Meta Keywords</label>
+        <input type="text" formControlName="metaKeyWords">
+      </div>
+  
+      <!-- Image Section -->
+  
+      <!-- Current Image -->
+      <div *ngIf="currentImage && !newImagePreview" class="image-preview">
+        <label>Current Image:</label>
+        <img [src]="currentImage" alt="Current Contact Image">
+      </div>
+  
+      <!-- New Image Preview -->
+      <div *ngIf="newImagePreview" class="image-preview">
+        <label>New Image Preview:</label>
+        <img [src]="newImagePreview" alt="New Contact Image">
+        <button type="button" (click)="removeNewImage()">Remove New Image</button>
+      </div>
+  
+      <!-- Upload -->
+      <div class="form-group upload-group">
+        <label>Upload New Image</label>
+      
+        <div class="custom-file-upload">
+          <input type="file" #fileInput (change)="onFileSelected($event)">
+          <span class="upload-btn">Choose Image</span>
+        </div>
+    
+      </div>
+      
+  
+      <!-- Language Tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let lang of languages">
+          <a href="#"
+             class="nav-link"
+             [class.active]="selectedLang === lang"
+             (click)="selectedLang = lang; $event.preventDefault()">
+            {{ lang.toUpperCase() }}
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Translation Content -->
+      <div class="tab-content">
+        <div [formGroup]="getTranslationGroup(selectedLang)">
+          <div class="form-group">
+            <label>Title ({{ selectedLang.toUpperCase() }})</label>
+            <input type="text" formControlName="title">
+          </div>
+  
+          <div class="form-group">
+            <label>Description ({{ selectedLang.toUpperCase() }})</label>
+            <textarea formControlName="description"></textarea>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit">Update Contact</button>
+  
+    </form>
+  </div>
+  

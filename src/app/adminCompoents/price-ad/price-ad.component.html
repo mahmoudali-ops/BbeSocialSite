@@ -1,0 +1,90 @@
+<section class="dashboard-section container">
+    <h2 class="section-title">All Prices</h2>
+  
+    <!-- Add Button -->
+    <div class="add-tour-wrapper">
+      <button 
+        class="btn add-tour-btn" 
+        [routerLink]="['/admin/price-create']">
+        <i class="fa-solid fa-plus"></i>
+        Add New Price
+      </button>
+    </div>
+  
+    <!-- Price List -->
+    <div class="tour-list">
+  
+      <!-- Header -->
+      <div class="tour-row header">
+        <div class="tour-col id">ID</div>
+        <div class="tour-col image">Image</div>
+        <div class="tour-col title">Title</div>
+        <div class="tour-col price">Price</div>
+        <div class="tour-col discount">Discount</div>
+        <div class="tour-col actions">Actions</div>
+      </div>
+  
+      @for (price of Data(); track price.id) {
+      <div class="tour-row price-row">
+  
+        <!-- ID -->
+        <div class="tour-col id">
+          <span>#{{ price.id }}</span>
+        </div>
+  
+        <!-- Image -->
+        <div class="tour-col image">
+          <img 
+            [src]="price.imageCover" 
+            alt="price image"
+            class="price-img">
+        </div>
+  
+        <!-- Title -->
+        <div class="tour-col title">
+          <h3>
+            {{ price.priceTranlationDtos[0]?.title }}
+          </h3>
+        </div>
+  
+        <!-- Price -->
+        <div class="tour-col price">
+          <span class="price-value">
+            ${{ price.priceTranlationDtos[0]?.priceService }}
+          </span>
+        </div>
+  
+        <!-- Discount -->
+        <div class="tour-col discount">
+          @if (price.priceTranlationDtos[0].discount > 0) {
+            <span class="discount-badge">
+              -{{ price.priceTranlationDtos[0]?.discount }}%
+            </span>
+          } @else {
+            <span class="no-discount">—</span>
+          }
+        </div>
+  
+        <!-- Actions -->
+        <div class="tour-col actions">
+          <button 
+            class="btn edit-btn"
+            title="Edit"
+            [routerLink]="['/admin/price-update', price.id]">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+  
+          <button 
+            class="btn delete-btn"
+            title="Delete"
+            (click)="delete(price.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+  
+      </div>
+      }
+  
+    </div>
+  </section>
+  

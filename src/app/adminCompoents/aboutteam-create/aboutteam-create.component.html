@@ -1,0 +1,69 @@
+<div class="about-team-create-container">
+    <h2>Add Team Member</h2>
+  
+    <form [formGroup]="aboutTeamForm" (ngSubmit)="onSubmit()">
+  
+      <!-- ================= Image Upload ================= -->
+      <div class="image-section">
+        <label>Team Member Image</label>
+        <div class="image-preview-block">
+          <ng-container *ngIf="newImagePreview; else placeholder">
+            <img [src]="newImagePreview" class="preview-img" alt="Team Member Image">
+          </ng-container>
+          <ng-template #placeholder>
+            <div class="placeholder-img">No image selected</div>
+          </ng-template>
+        </div>
+  
+        <div class="image-actions">
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" />
+          <button type="button" class="btn btn-remove" *ngIf="newImagePreview" (click)="removeNewImage()">Remove</button>
+        </div>
+      </div>
+  
+      <!-- ================= Language Tabs ================= -->
+      <div class="lang-tabs">
+        <button type="button"
+                *ngFor="let lang of languages"
+                [class.active]="selectedLang === lang"
+                (click)="selectedLang = lang">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+  
+      <!-- ================= Team Member Fields ================= -->
+      <div formArrayName="aboutTeamTranlationDtos">
+        <div *ngFor="let group of aboutTeamTranlationDtos.controls; let i = index" 
+             [formGroupName]="i"
+             [hidden]="group.get('language')?.value !== selectedLang" 
+             class="translation-card">
+  
+          <label>Name</label>
+          <input type="text" formControlName="name" placeholder="Member Name">
+  
+          <label>Position</label>
+          <input type="text" formControlName="position" placeholder="e.g., CEO, Developer, Designer">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Member Description" rows="4"></textarea>
+        </div>
+      </div>
+  
+      <!-- ================= Validation Errors Summary ================= -->
+      <div class="error-summary" *ngIf="formErrors.length > 0">
+        <h4>Please fix these errors:</h4>
+        <ul>
+          <li *ngFor="let error of formErrors">
+            {{ error.label }} ({{ error.lang }})
+          </li>
+        </ul>
+      </div>
+  
+      <!-- ================= Submit ================= -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="aboutTeamForm.invalid">
+          Add Team Member
+        </button>
+      </div>
+    </form>
+  </div>

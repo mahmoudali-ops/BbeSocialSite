@@ -1,0 +1,303 @@
+/* ================= Container ================= */
+.price-update-container {
+    padding: 25px;
+    max-width: 950px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .price-update-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* ================= Image Section ================= */
+  .image-section {
+    margin-bottom: 30px;
+  }
+  
+  .image-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .image-preview-block {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* عشان الصورة تبان كاملة */
+  }
+  
+  .placeholder-img {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  /* ===== Image Buttons ===== */
+  .image-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .image-actions .btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #ff7c85;
+    background: #fff;
+    color: #ff7c85;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .image-actions .btn:hover {
+    background: #ff7c85;
+    color: #fff;
+  }
+  
+  .btn-remove {
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+  }
+  
+  .btn-remove:hover {
+    background: #ef4444 !important;
+    color: #fff !important;
+  }
+  
+  /* ================= Language Tabs ================= */
+  .lang-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 25px 0;
+  }
+  
+  .lang-tabs button {
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+  
+  .lang-tabs button.active {
+    background: #ff7c85;
+    color: #fff;
+    border-color: #ff7c85;
+  }
+  
+  /* ================= Translation Form ================= */
+  .translation-form {
+    background: #f9f9f9;
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+  }
+  
+  /* ================= Inputs ================= */
+  .translation-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .translation-form input,
+  .translation-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: 0.2s;
+  }
+  
+  .translation-form input:focus,
+  .translation-form textarea:focus {
+    outline: none;
+    border-color: #ff7c85;
+    box-shadow: 0 0 0 2px rgba(255, 124, 133, 0.2);
+  }
+  
+  /* ================= Price & Discount Row ================= */
+  .price-discount-group {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .price-field,
+  .discount-field {
+    flex: 1;
+  }
+  
+  /* ================= Includes Section ================= */
+  .includes-section {
+    margin-top: 25px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+  }
+  
+  .includes-section h3 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ff7c85;
+  }
+  
+  .include-item {
+    margin-bottom: 10px;
+  }
+  
+  /* ================= Submit Button ================= */
+  .form-actions {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .btn-submit {
+    background: #ff7c85;
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background: #ff5a6a;
+  }
+  /* ================= Image Section ================= */
+.image-section {
+    margin-bottom: 30px;
+  }
+  
+  .image-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== Preview Block ===== */
+  .image-preview-block {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 230px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px dashed #ff7c85;
+    background: linear-gradient(135deg, #fff5f6, #ffe9eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .image-preview-block:hover {
+    box-shadow: 0 10px 25px rgba(255, 124, 133, 0.25);
+    transform: translateY(-3px);
+  }
+  
+  /* ===== Preview Image ===== */
+  .preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+  }
+  
+  .image-preview-block:hover .preview-img {
+    transform: scale(1.08);
+  }
+  
+  /* ===== Placeholder ===== */
+  .placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 124, 133, 0.08);
+    color: #ff7c85;
+    border: 1px dashed #ffc1c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* ===== Overlay Actions ===== */
+  .image-actions {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  
+  .image-preview-block:hover .image-actions {
+    opacity: 1;
+  }
+  
+  /* ===== Buttons ===== */
+  .image-actions .btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+    background: #ffffff;
+    color: #ff3f57;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-actions .btn:hover {
+    background: #ff7c85;
+    color: #fff;
+  }
+  
+  .btn-remove {
+    background: #ef4444 !important;
+    color: #fff !important;
+  }
+  
+  .btn-remove:hover {
+    background: #b91c1c !important;
+    transform: translateY(-2px);
+  }
+  

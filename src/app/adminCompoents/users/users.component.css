@@ -3,7 +3,7 @@
 =============================== */
 .dashboard-section {
     padding: 2rem 1rem;
-    background: #f0f4f8;
+    background: #fcf1f1;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,7 +55,7 @@
 
     max-width: 1500px;        /* حجم مناسب للجدول */
     padding: 2rem 1rem;
-    background: #f0f4f8;
+    background: #fcf1f1;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -66,7 +66,7 @@
     display: grid;
     grid-template-columns: 100px 2fr 2fr 150px 150px;
     column-gap: 25px;
-    background: linear-gradient(135deg,rgb(32, 33, 30),rgb(129, 128, 14),rgb(32, 33, 30));
+    background: #ff9a9c;
     padding: 12px 20px;
     border-radius: 10px;
     color: #fff;
@@ -248,7 +248,7 @@
   }
   
   .pagination-number.active-page {
-    background: linear-gradient(135deg,#007bff,#0356c7);
+    background: linear-gradient(135deg,#f89091,#f9abac);
     color: #fff;
     font-weight: bold;
     transform: scale(1.08);

@@ -1,0 +1,90 @@
+<div class="price-update-container">
+    <h2>Update Price Plan</h2>
+  
+    <!-- ========================= -->
+    <!-- Image Section -->
+    <!-- ========================= -->
+    <div class="image-section">
+      <label>Plan Image</label>
+      <div class="image-preview-block">
+        <img *ngIf="imagePreview; else placeholder" [src]="imagePreview" alt="Price Plan" class="preview-img">
+        <ng-template #placeholder>
+          <div class="placeholder-img">No Image Selected</div>
+        </ng-template>
+        <div class="image-actions">
+          <button type="button" class="btn" (click)="fileInput.click()">Choose Image</button>
+          <button type="button" class="btn btn-remove" *ngIf="imagePreview" (click)="removeImage()">Remove</button>
+        </div>
+        <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+      </div>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Language Tabs -->
+    <!-- ========================= -->
+    <div class="lang-tabs">
+      <button *ngFor="let lang of languages"
+              type="button"
+              [class.active]="selectedLang === lang"
+              (click)="selectedLang = lang">
+        {{ lang.toUpperCase() }}
+      </button>
+    </div>
+  
+    <!-- ========================= -->
+    <!-- Translation Form -->
+    <!-- ========================= -->
+    <form [formGroup]="priceForm" (ngSubmit)="onSubmit()">
+      <div class="translation-form" *ngFor="let lang of languages" [hidden]="selectedLang !== lang">
+        <div [formGroup]="getTranslationGroup(lang)">
+          <div class="price-discount-group">
+            <div class="price-field">
+              <label>Price ($)</label>
+              <input type="number" formControlName="priceService" placeholder="0.00" step="0.01">
+            </div>
+  
+            <div class="discount-field">
+              <label>Discount (%)</label>
+              <input type="number" formControlName="discount" placeholder="0" min="0" max="100">
+            </div>
+          </div>
+  
+          <label>Title</label>
+          <input type="text" formControlName="title" placeholder="Plan Title" maxlength="250">
+  
+          <label>Description</label>
+          <textarea formControlName="description" placeholder="Plan Description..." rows="3"></textarea>
+  
+          <div class="includes-section">
+            <h3>What's Included</h3>
+            
+            <div class="include-item">
+              <label>Include First</label>
+              <input type="text" formControlName="includeFirst" placeholder="e.g., 24/7 Support">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Second</label>
+              <input type="text" formControlName="includeSecond" placeholder="e.g., Free Consultation">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Third</label>
+              <input type="text" formControlName="includeThird" placeholder="e.g., Unlimited Projects">
+            </div>
+  
+            <div class="include-item">
+              <label>Include Forth</label>
+              <input type="text" formControlName="includeForth" placeholder="e.g., Dedicated Manager">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-submit" [disabled]="priceForm.invalid">
+          Update Price Plan
+        </button>
+      </div>
+    </form>
+  </div>

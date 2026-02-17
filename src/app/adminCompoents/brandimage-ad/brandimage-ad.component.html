@@ -1,0 +1,75 @@
+<section class="dashboard-section container">
+
+    <h2 class="section-title">Brand Images</h2>
+  
+    <!-- =======================
+         ADD IMAGE SECTION
+    ======================== -->
+    <div class="upload-wrapper">
+
+        <!-- Preview -->
+        <div class="preview-box" *ngIf="previewUrl">
+          <img [src]="previewUrl" alt="Preview">
+        </div>
+      
+        <div class="upload-controls">
+      
+          <!-- Choose Image -->
+          <label class="custom-file">
+            <input 
+              #fileInput
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)">
+            <span>
+              <i class="fa-solid fa-image"></i>
+              Choose Image
+            </span>
+          </label>
+      
+          <!-- Upload -->
+          <button 
+            class="add-tour-btn"
+            (click)="uploadImage()"
+            [disabled]="!selectedFile">
+            <i class="fa-solid fa-plus"></i>
+            Upload
+          </button>
+      
+          <!-- Remove (يظهر بس لو في صورة) -->
+          <button 
+            *ngIf="selectedFile"
+            class="remove-btn"
+            (click)="clearImage(fileInput)">
+            <i class="fa-solid fa-xmark"></i>
+            Remove
+          </button>
+      
+        </div>
+      </div>
+      
+      
+  
+    <!-- =======================
+         IMAGES GRID
+    ======================== -->
+    <div class="image-grid">
+  
+      @for (img of Data(); track img.id) {
+        <div class="image-card">
+  
+          <img [src]="img.imageUrl" alt="Brand Image">
+  
+          <button 
+            class="delete-btn delete-overlay"
+            (click)="delete(img.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+  
+        </div>
+      }
+  
+    </div>
+  
+  </section>
+  

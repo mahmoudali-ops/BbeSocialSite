@@ -16,8 +16,8 @@
         <div class="tour-col id">ID</div>
         <div class="tour-col title">Full Name</div>
         <div class="tour-col title category">Email Address</div>
+        <div class="tour-col title category">Subject</div>
         <div class="tour-col date">created At</div>
-        <div class="tour-col status">Booking Date</div>
       </div>
   
       @for (email of AllemailList()|searchemail: searchTerm; track email.id) {
@@ -40,7 +40,10 @@
         <div class="tour-col title destination">
           <h3>{{ email.emailAddress }}</h3>
         </div>
-
+        <div class="tour-col date">
+          <i class="fa-regular fa-clock"></i>
+          <span>{{ email.subject }}</span>
+        </div>
   
         <!-- Created Date -->
         <div class="tour-col date">
@@ -48,10 +51,7 @@
           <span>{{ email.createdAt | date:'mediumDate' }}</span>
         </div>
         
-        <div class="tour-col date">
-            <i class="fa-regular fa-clock"></i>
-            <span>{{ email.bookingDate | date:'mediumDate' }}</span>
-          </div>
+ 
         <!-- Status -->
      
     
@@ -89,7 +89,7 @@
        <div class="details-grid">
          <p><strong>Full Name:</strong> {{ selectedEmail()?.fullName }}</p>
          <p><strong>Email:</strong> {{ selectedEmail()?.emailAddress }}</p>
-
+         <p><strong>Subject:</strong> {{ selectedEmail()?.subject }}</p>
        </div>
  
        <div class="message-box">
