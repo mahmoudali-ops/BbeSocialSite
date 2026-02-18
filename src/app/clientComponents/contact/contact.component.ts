@@ -10,6 +10,7 @@ import { ReloadableComponent } from '../reloadable/reloadable.component';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TranslatedPipe } from '../../core/pipes/translate.pipe';
 import { ToastrService } from 'ngx-toastr';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -19,6 +20,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent extends ReloadableComponent {
+
+  private readonly meta=inject(Meta);
+  private readonly title=inject(Title);
   // Services
   private readonly contactService = inject(ContactService);
   private readonly emailService = inject(EmailService);
@@ -36,8 +40,79 @@ export class ContactComponent extends ReloadableComponent {
     this.initForm();
     this.LoadData();
     this.onReload(() => this.LoadData());
+    this.LoadDataSeo();
   }
-
+  LoadDataSeo() {
+    // 🔹 تنظيف أي meta قديم
+    this.meta.removeTag("name='description'");
+    this.meta.removeTag("name='keywords'");
+    this.meta.removeTag("property='og:title'");
+    this.meta.removeTag("property='og:description'");
+    this.meta.removeTag("property='og:type'");
+    this.meta.removeTag("property='og:url'");
+    this.meta.removeTag("property='og:image'");
+    this.meta.removeTag("name='twitter:card'");
+    this.meta.removeTag("name='twitter:title'");
+    this.meta.removeTag("name='twitter:description'");
+    this.meta.removeTag("name='twitter:image'");
+    this.meta.removeTag("rel='canonical'");
+  
+    // 🔹 Title (Brand + Contact)
+    this.title.setTitle(
+      'Contact BBESocial | Get Professional Customer Service Support'
+    );
+  
+    // 🔹 Meta Description (SEO + Conversion)
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Get in touch with BBESocial to enhance your customer service experience. Contact our professional team for support, inquiries, and partnership opportunities in e-commerce customer support.'
+    });
+  
+    // 🔹 Keywords (Relevant & Clean)
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'BBESocial contact, customer service support, get in touch, e-commerce support, customer support team, professional customer service'
+    });
+  
+    // 🔹 Open Graph (Social Sharing + Branding)
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Contact BBESocial | Professional Customer Service Support'
+    });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Reach out to BBESocial and connect with our customer service experts. We provide reliable support for e-commerce brands to enhance customer satisfaction.'
+    });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://bbesocial.com/contact' });
+    this.meta.updateTag({
+      property: 'og:image',
+      content: 'https://bbesocial.com/assets/images/bbesocaiallogo.png'
+    });
+  
+    // 🔹 Twitter Card
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({
+      name: 'twitter:title',
+      content: 'Contact BBESocial | Professional Customer Service Support'
+    });
+    this.meta.updateTag({
+      name: 'twitter:description',
+      content:
+        'Reach out to BBESocial and connect with our customer service experts. We provide reliable support for e-commerce brands to enhance customer satisfaction.'
+    });
+    this.meta.updateTag({
+      name: 'twitter:image',
+      content: 'https://bbesocial.com/assets/images/bbesocaiallogo.png'
+    });
+  
+    // 🔹 Canonical URL
+    this.meta.updateTag({ rel: 'canonical', href: 'https://bbesocial.com/contact' });
+  }
+  
   // ========================
   // Form Init
   // ========================

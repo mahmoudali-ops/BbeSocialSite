@@ -96,8 +96,19 @@ export class HomeComponent  extends ReloadableComponent {
    }
 
    LoadDataSeo() {
+    // 🔹 تنظيف أي meta قديم
     this.meta.removeTag("name='description'");
     this.meta.removeTag("name='keywords'");
+    this.meta.removeTag("property='og:title'");
+    this.meta.removeTag("property='og:description'");
+    this.meta.removeTag("property='og:type'");
+    this.meta.removeTag("property='og:url'");
+    this.meta.removeTag("property='og:image'");
+    this.meta.removeTag("name='twitter:card'");
+    this.meta.removeTag("name='twitter:title'");
+    this.meta.removeTag("name='twitter:description'");
+    this.meta.removeTag("name='twitter:image'");
+    this.meta.removeTag("rel='canonical'");
   
     // 🔹 Title (Brand + Service)
     this.title.setTitle(
@@ -115,7 +126,7 @@ export class HomeComponent  extends ReloadableComponent {
     this.meta.updateTag({
       name: 'keywords',
       content:
-        'customer service agency, customer support outsourcing, e-commerce customer support, live chat support, email support services, call center solutions, multilingual customer service, BBESocial'
+        'customer service agency, e-commerce support, live chat support, email support, call center, multilingual customer service, BBESocial'
     });
   
     // 🔹 Open Graph (Social Sharing + Branding)
@@ -123,20 +134,38 @@ export class HomeComponent  extends ReloadableComponent {
       property: 'og:title',
       content: 'BBESocial | Customer Service Agency for E-commerce Brands'
     });
-  
     this.meta.updateTag({
       property: 'og:description',
       content:
         'Extend your in-house team with professional customer service solutions. BBESocial provides reliable, human-centered support that strengthens your brand and delights your customers.'
     });
-  
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:url', content: 'https://bbesocial.com/' });
     this.meta.updateTag({
       property: 'og:image',
-      content: 'https://bbesocial.com/assets/images/bbesocial-logo.png'
+      content: 'https://bbesocial.com/assets/images/bbesocaiallogo.png'
     });
-  };
+  
+    // 🔹 Twitter Card
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({
+      name: 'twitter:title',
+      content: 'BBESocial | Customer Service Agency for E-commerce Brands'
+    });
+    this.meta.updateTag({
+      name: 'twitter:description',
+      content:
+        'Extend your in-house team with professional customer service solutions. BBESocial provides reliable, human-centered support that strengthens your brand and delights your customers.'
+    });
+    this.meta.updateTag({
+      name: 'twitter:image',
+      content: 'https://bbesocial.com/assets/images/bbesocaiallogo.png'
+    });
+  
+    // 🔹 Canonical URL
+    this.meta.updateTag({ rel: 'canonical', href: 'https://bbesocial.com/' });
+  }
+  
   
   //  LoadData() {
   //   this.destnationservice.getAllDestnation()
